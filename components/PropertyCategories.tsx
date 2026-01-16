@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 const categories = [
   {
@@ -198,7 +199,7 @@ export default function PropertyCategories() {
           <h3 className="text-sm md:text-base font-semibold text-gray-400 uppercase tracking-wider mb-2">
             PROPERTY CATEGORIES
           </h3>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-200">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#2E2E2E]">
             Spaces That Match Every Purpose
           </h2>
         </div>
@@ -206,23 +207,16 @@ export default function PropertyCategories() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mt-12">
           {/* Left Side - Large Image */}
           <div className="relative rounded-2xl overflow-hidden bg-gray-900">
-            <div className="relative w-full h-[500px] lg:h-[600px]">
+            <div className="relative w-full h-full">
               {/* Image - Replace /images/residential_street.png with your actual image path */}
               <div className="w-full h-full bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900 relative">
-                {/* Placeholder gradient - Replace this div with Image component when you have the image */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="text-gray-500 text-sm">
-                    Add residential street image at /images/residential_street.png
-                  </p>
-                </div>
-                {/* Uncomment below and remove placeholder when image is available:
                 <Image
-                  src="/images/residential_street.png"
+                  src="/images/purpose.png"
                   alt="Residential Street"
                   fill
-                  className="object-cover rounded-2xl"
+                  className="object-cover rounded-2xl object-center"
+                  priority
                 />
-                */}
               </div>
               {/* Golden Button with Diagonal Arrow */}
               <div className="absolute bottom-6 right-6 z-10">
