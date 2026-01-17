@@ -3,12 +3,16 @@
 import Image from "next/image";
 import { useState } from "react";
 
-export default function PropertiesHero() {
+interface PropertiesHeroProps {
+  onSearch: (type: string, location: string) => void;
+}
+
+export default function PropertiesHero({ onSearch }: PropertiesHeroProps) {
   const [propertyType, setPropertyType] = useState("");
   const [location, setLocation] = useState("");
 
   return (
-    <section className="relative w-full h-[500px] lg:h-[600px]">
+    <section className="relative w-full h-[450px] sm:h-[500px] md:h-[550px] lg:h-[600px]">
       {/* Background Image - Replace with actual hero image */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900">
         {/* Placeholder - Add your hero image at /images/properties_hero.png */}
@@ -32,22 +36,22 @@ export default function PropertiesHero() {
       <div className="absolute inset-0 bg-black/50" />
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
+      <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-4xl mx-auto text-center space-y-4 md:space-y-6">
           {/* Title */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
             Explore Available Properties
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-200 max-w-2xl mx-auto px-4">
             Browse verified residential, commercial, and plot opportunities
             selected for location, quality, and long-term value.
           </p>
 
           {/* Search Bar */}
-          <div className="mt-8 bg-white rounded-lg p-2 shadow-xl max-w-4xl mx-auto">
-            <div className="flex flex-col md:flex-row gap-2">
+          <div className="mt-6 md:mt-8 bg-white rounded-lg p-2 sm:p-3 shadow-xl max-w-4xl mx-auto w-full">
+            <div className="flex flex-col sm:flex-row gap-2">
               {/* Property Type Dropdown */}
               <select
                 value={propertyType}
@@ -74,10 +78,10 @@ export default function PropertiesHero() {
 
               {/* Search Button */}
               <button
+                type="button"
                 className="px-8 py-3 bg-[#421F00] text-white rounded-lg font-semibold hover:bg-[#4a2500] transition-colors flex items-center justify-center gap-2"
                 onClick={() => {
-                  // Handle search
-                  console.log("Search:", { propertyType, location });
+                  onSearch(propertyType, location);
                 }}
               >
                 <svg

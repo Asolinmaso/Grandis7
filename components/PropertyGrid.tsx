@@ -1,118 +1,135 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
-const allProperties = [
-  {
-    id: 1,
-    title: "Luxury Villa",
-    type: "Residential",
-    location: "Baner, Pune",
-    image: "/images/worth_exploring/Luxury_villa.png",
-  },
-  {
-    id: 2,
-    title: "2 BHK",
-    type: "Residential",
-    location: "Baner, Pune",
-    image: "/images/worth_exploring/2BHK.png",
-  },
-  {
-    id: 3,
-    title: "Premium Office Space",
-    type: "Commercial",
-    location: "Baner, Pune",
-    image: "/images/worth_exploring/Commercial_space.png",
-  },
-  {
-    id: 4,
-    title: "1000sqft Open Plot",
-    type: "Plots",
-    location: "Baner, Pune",
-    image: "/images/worth_exploring/Luxury_villa.png",
-  },
-  {
-    id: 5,
-    title: "3 BHK",
-    type: "Residential",
-    location: "Baner, Pune",
-    image: "/images/worth_exploring/2BHK.png",
-  },
-  {
-    id: 6,
-    title: "2000sqft Open Plot",
-    type: "Plots",
-    location: "Baner, Pune",
-    image: "/images/worth_exploring/Commercial_space.png",
-  },
-  {
-    id: 7,
-    title: "Luxury Villa",
-    type: "Residential",
-    location: "Baner, Pune",
-    image: "/images/worth_exploring/Luxury_villa.png",
-  },
-  {
-    id: 8,
-    title: "Commercial Space",
-    type: "Commercial",
-    location: "Baner, Pune",
-    image: "/images/worth_exploring/Commercial_space.png",
-  },
-  {
-    id: 9,
-    title: "4 BHK",
-    type: "Residential",
-    location: "Baner, Pune",
-    image: "/images/worth_exploring/2BHK.png",
-  },
-];
+interface Property {
+  _id: string;
+  name: string;
+  type: string;
+  city: string;
+  images: string[];
+  address?: string;
+}
 
-export default function PropertyGrid() {
+interface PropertyGridProps {
+  searchQuery?: string;
+  propertyType?: string;
+  location?: string;
+}
+
+export default function PropertyGrid({
+  searchQuery = "",
+  propertyType = "",
+  location = "",
+}: PropertyGridProps) {
+  const router = useRouter();
+  const [properties, setProperties] = useState<Property[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const propertiesPerPage = 9;
-  const totalPages = Math.ceil(allProperties.length / propertiesPerPage);
+  const [totalPages, setTotalPages] = useState(1);
+  const [loading, setLoading] = useState(true);
 
-  const startIndex = (currentPage - 1) * propertiesPerPage;
-  const endIndex = startIndex + propertiesPerPage;
-  const currentProperties = allProperties.slice(startIndex, endIndex);
+  useEffect(() => {
+    setCurrentPage(1); // Reset to page 1 when filters change
+  }, [searchQuery, propertyType, location]);
+
+  useEffect(() => {
+    fetchProperties();
+  }, [currentPage, searchQuery, propertyType, location]);
+
+  const fetchProperties = async () => {
+    setLoading(true);
+    try {
+      const params = new URLSearchParams({
+        page: currentPage.toString(),
+        limit: "9",
+      });
+
+      if (searchQuery) params.append("search", searchQuery);
+      if (propertyType) params.append("type", propertyType);
+      if (location) params.append("location", location);
+
+      const response = await fetch(`/api/properties?${params.toString()}`);
+      const data = await response.json();
+
+      if (response.ok) {
+        setProperties(data.properties);
+        setTotalPages(data.pagination.totalPages);
+      }
+    } catch (error) {
+      console.error("Error fetching properties:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleViewDetails = (id: string) => {
+    router.push(`/properties/${id}`);
+  };
+
+  if (loading) {
+    return (
+      <section className="w-full bg-gray-50 py-16 lg:py-24">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center py-12">
+            <p className="text-gray-600">Loading properties...</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="w-full bg-gray-50 py-16 lg:py-24">
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Property Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
-          {currentProperties.map((property) => (
-            <div
-              key={property.id}
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
-            >
-              {/* Property Image */}
-              <div className="relative w-full h-[250px] lg:h-[300px]">
-                <Image
-                  src={property.image}
-                  alt={property.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
+        {properties.length === 0 ? (
+          <div className="text-center py-12">
+            <p className="text-gray-600">No properties found.</p>
+          </div>
+        ) : (
+          <>
+            {/* Property Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
+              {properties.map((property) => (
+                <div
+                  key={property._id}
+                  className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                >
+                  {/* Property Image */}
+                  <div className="relative w-full h-[250px] lg:h-[300px]">
+                    <Image
+                      src={
+                        property.images && property.images.length > 0
+                          ? property.images[0]
+                          : "/images/worth_exploring/Luxury_villa.png"
+                      }
+                      alt={property.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
 
-              {/* Property Details */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  {property.title}
-                </h3>
-                <p className="text-sm text-gray-600 mb-4">
-                  {property.type} | {property.location}
-                </p>
-                <button className="w-full py-3 bg-[#421F00] text-white rounded-lg font-semibold hover:bg-[#4a2500] transition-colors">
-                  View Details
-                </button>
-              </div>
+                  {/* Property Details */}
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                      {property.name}
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-4">
+                      {property.type} | {property.city}
+                    </p>
+                    <button
+                      onClick={() => handleViewDetails(property._id)}
+                      className="w-full py-3 bg-[#421F00] text-white rounded-lg font-semibold hover:bg-[#4a2500] transition-colors"
+                    >
+                      View Details
+                    </button>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </>
+        )}
 
         {/* Pagination */}
         <div className="flex items-center justify-center gap-2">

@@ -2,13 +2,13 @@ import Image from "next/image";
 
 export default function ContactUs() {
   return (
-    <section className="w-full py-16 lg:py-24">
+    <section className="w-full py-12 md:py-16 lg:py-24">
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
           {/* Left Side - Text and Button */}
-          <div className="space-y-6 lg:space-y-8">
+          <div className="space-y-4 md:space-y-6 lg:space-y-8">
             {/* Headline */}
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
               Looking for the Right Property?
             </h2>
 

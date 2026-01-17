@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="w-full">
       {/* Top Section - City Skyline */}
-      <div className="relative w-full h-[45vh] overflow-hidden">
+      <div className="relative w-full h-[30vh] sm:h-[35vh] md:h-[40vh] lg:h-[45vh] overflow-hidden">
         <Image
           src="/images/footer_img.png"
           alt="City Skyline"

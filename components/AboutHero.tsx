@@ -4,26 +4,19 @@ export default function AboutHero() {
   return (
     <section className="relative w-full h-[500px] lg:h-[600px]">
       {/* Background Image */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900">
-        {/* Placeholder - Add modern house image at /images/about_hero.png */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <p className="text-gray-500 text-sm">
-            Add modern house image at /images/about_hero.png
-          </p>
-        </div>
-        {/* Uncomment when image is available:
+      <div className="absolute w-full h-full">
+       
         <Image
-          src="/images/about_hero.png"
+          src="/images/Banner.png"
           alt="About Us Hero"
           fill
           className="object-cover"
           priority
         />
-        */}
       </div>
 
       {/* Dark Brown Overlay */}
-      <div className="absolute inset-0 bg-[#421F00]/70" />
+      <div className="absolute inset-0 bg-[#421F00]/20" />
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-center">

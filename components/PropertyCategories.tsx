@@ -204,10 +204,10 @@ export default function PropertyCategories() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mt-8 md:mt-12">
           {/* Left Side - Large Image */}
           <div className="relative rounded-2xl overflow-hidden bg-gray-900">
-            <div className="relative w-full h-full">
+            <div className="relative w-full h-[400px] md:h-[500px] lg:h-full min-h-[400px]">
               {/* Image - Replace /images/residential_street.png with your actual image path */}
               <div className="w-full h-full bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900 relative">
                 <Image
