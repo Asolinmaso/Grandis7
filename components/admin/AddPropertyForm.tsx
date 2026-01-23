@@ -122,15 +122,15 @@ export default function AddPropertyForm() {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen p-8">
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">Admin Dashboard</h1>
-      <h2 className="text-2xl font-semibold text-gray-800 mb-8">Add Property</h2>
+    <div className="bg-gray-50 min-h-screen p-4 md:p-8">
+      <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Admin Dashboard</h1>
+      <h2 className="text-xl md:text-2xl font-semibold text-gray-800 mb-6 md:mb-8">Add Property</h2>
 
-      <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-md p-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+      <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-md p-4 md:p-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
           {/* Name */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-xs md:text-sm font-medium text-gray-700 mb-2">
               Name
             </label>
             <input
@@ -140,13 +140,13 @@ export default function AddPropertyForm() {
               onChange={handleChange}
               required
               placeholder="Enter Property Name"
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00]"
+              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-sm md:text-base"
             />
           </div>
 
           {/* Type */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-xs md:text-sm font-medium text-gray-700 mb-2">
               Type
             </label>
             <input
@@ -156,13 +156,13 @@ export default function AddPropertyForm() {
               onChange={handleChange}
               required
               placeholder="Enter Property Type"
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00]"
+              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-sm md:text-base"
             />
           </div>
 
           {/* Area */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-xs md:text-sm font-medium text-gray-700 mb-2">
               Area
             </label>
             <input
@@ -172,13 +172,13 @@ export default function AddPropertyForm() {
               onChange={handleChange}
               required
               placeholder="Enter Property Area in Sqft"
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00]"
+              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-sm md:text-base"
             />
           </div>
 
           {/* Configuration */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-xs md:text-sm font-medium text-gray-700 mb-2">
               Configuration
             </label>
             <input
@@ -188,13 +188,13 @@ export default function AddPropertyForm() {
               onChange={handleChange}
               required
               placeholder="Enter Configuration"
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00]"
+              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-sm md:text-base"
             />
           </div>
 
           {/* Address */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-xs md:text-sm font-medium text-gray-700 mb-2">
               Address
             </label>
             <input
@@ -204,13 +204,13 @@ export default function AddPropertyForm() {
               onChange={handleChange}
               required
               placeholder="Enter Address"
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00]"
+              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-sm md:text-base"
             />
           </div>
 
           {/* City */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-xs md:text-sm font-medium text-gray-700 mb-2">
               City
             </label>
             <input
@@ -220,13 +220,13 @@ export default function AddPropertyForm() {
               onChange={handleChange}
               required
               placeholder="Enter City"
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00]"
+              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-sm md:text-base"
             />
           </div>
 
           {/* State */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-xs md:text-sm font-medium text-gray-700 mb-2">
               State
             </label>
             <input
@@ -236,13 +236,13 @@ export default function AddPropertyForm() {
               onChange={handleChange}
               required
               placeholder="Enter State"
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00]"
+              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-sm md:text-base"
             />
           </div>
 
           {/* Pincode */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-xs md:text-sm font-medium text-gray-700 mb-2">
               Pincode
             </label>
             <input
@@ -252,13 +252,13 @@ export default function AddPropertyForm() {
               onChange={handleChange}
               required
               placeholder="Enter Pincode"
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00]"
+              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-sm md:text-base"
             />
           </div>
 
           {/* Status */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-xs md:text-sm font-medium text-gray-700 mb-2">
               Status
             </label>
             <select
@@ -266,7 +266,7 @@ export default function AddPropertyForm() {
               value={formData.status}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] bg-white"
+              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] bg-white text-sm md:text-base"
             >
               <option value="">Select Status</option>
               <option value="available">Available</option>
@@ -277,7 +277,7 @@ export default function AddPropertyForm() {
 
           {/* Price */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-xs md:text-sm font-medium text-gray-700 mb-2">
               Price
             </label>
             <input
@@ -286,7 +286,7 @@ export default function AddPropertyForm() {
               value={formData.price}
               onChange={handleChange}
               placeholder="On Request"
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00]"
+              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-sm md:text-base"
             />
           </div>
         </div>
@@ -303,7 +303,7 @@ export default function AddPropertyForm() {
             required
             rows={4}
             placeholder="Enter Description"
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] resize-none"
+            className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] resize-none text-sm md:text-base"
           />
         </div>
 
@@ -324,12 +324,12 @@ export default function AddPropertyForm() {
                 }
               }}
               placeholder="Add Amenities"
-              className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00]"
+              className="flex-1 px-3 md:px-4 py-2 md:py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-sm md:text-base"
             />
             <button
               type="button"
               onClick={handleAddAmenity}
-              className="px-6 py-3 bg-[#421F00] text-white rounded-lg font-semibold hover:bg-[#4a2500] transition-colors"
+              className="px-4 md:px-6 py-2 md:py-3 bg-[#421F00] text-white rounded-lg font-semibold hover:bg-[#4a2500] transition-colors text-sm md:text-base"
             >
               +
             </button>
@@ -338,7 +338,7 @@ export default function AddPropertyForm() {
             {amenities.map((amenity, index) => (
               <span
                 key={index}
-                className="px-4 py-2 bg-gray-100 rounded-full text-gray-700 flex items-center gap-2"
+                className="px-3 md:px-4 py-1.5 md:py-2 bg-gray-100 rounded-full text-gray-700 flex items-center gap-2 text-xs md:text-sm"
               >
                 {amenity}
                 <button
@@ -359,7 +359,7 @@ export default function AddPropertyForm() {
             Upload Property Images
           </label>
           <div className="mb-3">
-            <label className="inline-block px-6 py-3 bg-[#421F00] text-white rounded-lg font-semibold hover:bg-[#4a2500] transition-colors cursor-pointer">
+            <label className="inline-block px-4 md:px-6 py-2 md:py-3 bg-[#421F00] text-white rounded-lg font-semibold hover:bg-[#4a2500] transition-colors cursor-pointer text-sm md:text-base">
               <input
                 type="file"
                 multiple
@@ -375,7 +375,7 @@ export default function AddPropertyForm() {
             {images.map((image, index) => (
               <span
                 key={index}
-                className="px-4 py-2 bg-gray-100 rounded-full text-gray-700 flex items-center gap-2"
+                className="px-3 md:px-4 py-1.5 md:py-2 bg-gray-100 rounded-full text-gray-700 flex items-center gap-2 text-xs md:text-sm"
               >
                 Image{index + 1}.jpg
                 <button
@@ -393,7 +393,7 @@ export default function AddPropertyForm() {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full md:w-auto px-8 py-3 bg-[#421F00] text-white rounded-lg font-semibold hover:bg-[#4a2500] transition-colors"
+          className="w-full md:w-auto px-6 md:px-8 py-2 md:py-3 bg-[#421F00] text-white rounded-lg font-semibold hover:bg-[#4a2500] transition-colors text-sm md:text-base"
         >
           Create Property
         </button>
