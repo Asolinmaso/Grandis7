@@ -7,184 +7,27 @@ const categories = [
   {
     id: 1,
     name: "Residential",
-    icon: (
-      <svg
-        width="40"
-        height="40"
-        viewBox="0 0 40 40"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M5 30V15L20 5L35 15V30H25V20H15V30H5Z"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M10 15H15"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <path
-          d="M10 20H15"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
+    image: "/images/property_categories/residential.png",
   },
   {
     id: 2,
     name: "Commercial",
-    icon: (
-      <svg
-        width="40"
-        height="40"
-        viewBox="0 0 40 40"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <rect
-          x="8"
-          y="12"
-          width="8"
-          height="18"
-          stroke="currentColor"
-          strokeWidth="2"
-        />
-        <rect
-          x="18"
-          y="8"
-          width="8"
-          height="22"
-          stroke="currentColor"
-          strokeWidth="2"
-        />
-        <rect
-          x="28"
-          y="15"
-          width="4"
-          height="15"
-          stroke="currentColor"
-          strokeWidth="2"
-        />
-        <path
-          d="M8 30H36"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
+    image: "/images/property_categories/commercial.png",
   },
   {
     id: 3,
     name: "Plots",
-    icon: (
-      <svg
-        width="40"
-        height="40"
-        viewBox="0 0 40 40"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M8 8H32V32H8V8Z"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M8 20H32"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <path
-          d="M20 8V32"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <circle cx="12" cy="14" r="2" fill="currentColor" />
-        <circle cx="28" cy="26" r="2" fill="currentColor" />
-      </svg>
-    ),
+    image: "/images/property_categories/plots.png",
   },
   {
     id: 4,
     name: "New Launch",
-    icon: (
-      <svg
-        width="40"
-        height="40"
-        viewBox="0 0 40 40"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <rect
-          x="10"
-          y="10"
-          width="20"
-          height="20"
-          stroke="currentColor"
-          strokeWidth="2"
-          rx="2"
-        />
-        <path
-          d="M10 18H30"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <path
-          d="M10 22H30"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <circle cx="20" cy="14" r="2" fill="currentColor" />
-      </svg>
-    ),
+    image: "/images/property_categories/new_launch.png",
   },
   {
     id: 5,
     name: "Ready To Move",
-    icon: (
-      <svg
-        width="40"
-        height="40"
-        viewBox="0 0 40 40"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M6 30V18L20 8L34 18V30H26V22H14V30H6Z"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M12 18H16"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <path
-          d="M24 18H28"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <circle cx="20" cy="25" r="2" fill="currentColor" />
-      </svg>
-    ),
+    image: "/images/property_categories/Ready_To_Move.png",
   },
 ];
 
@@ -278,19 +121,19 @@ export default function PropertyCategories() {
                       : "bg-[#421F00] hover:bg-[#4a2500]"
                   }`}
                 >
-                  {/* Icon Circle */}
+                  {/* Image Circle */}
                   <div
-                    className={`w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 ${
+                    className={`w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden ${
                       isActive ? "bg-white/20" : "bg-[#2a1500]"
                     }`}
                   >
-                    <div
-                      className={`${
-                        isActive ? "text-white" : "text-[#FFBA3E]"
-                      }`}
-                    >
-                      {category.icon}
-                    </div>
+                    <Image
+                      src={category.image}
+                      alt={category.name}
+                      width={56}
+                      height={56}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   {/* Category Name */}
                   <span
