@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
+import { Noto_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+
+const notoSans = Noto_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-noto-sans",
+});
 
 export const metadata: Metadata = {
   title: "Grandis7",
@@ -13,8 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" className={notoSans.variable}>
+      <body className="font-sans antialiased">
         <Navbar />
         {children}
       </body>

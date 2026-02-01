@@ -4,21 +4,7 @@ const services = [
     title: "Property Buying Assistance",
     description:
       "We guide buyers through verified property options with clear insights, expert support, and confident decisions.",
-    icon: (
-      <svg
-        className="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-        />
-      </svg>
-    ),
+    icon: "home",
     isHighlighted: true,
   },
   {
@@ -26,21 +12,7 @@ const services = [
     title: "Investment Guidance",
     description:
       "We guide investors through verified opportunities with clear insights, expert support, and confident decisions.",
-    icon: (
-      <svg
-        className="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-        />
-      </svg>
-    ),
+    icon: "chart",
     isHighlighted: false,
   },
   {
@@ -48,27 +20,7 @@ const services = [
     title: "Site Visit Support",
     description:
       "We guide clients through planned site visits with clear insights, expert support, and confident decisions.",
-    icon: (
-      <svg
-        className="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-        />
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-        />
-      </svg>
-    ),
+    icon: "location",
     isHighlighted: false,
   },
   {
@@ -76,38 +28,37 @@ const services = [
     title: "Documentation Help",
     description:
       "We guide clients through required documentation with clear insights, expert support, and confident decisions.",
-    icon: (
-      <svg
-        className="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-        />
-      </svg>
-    ),
+    icon: "document",
     isHighlighted: false,
   },
 ];
 
 export default function ServicesSection() {
   return (
-    <section className="w-full bg-white py-16 lg:py-24">
-      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-[#FAFAFA] py-16 lg:py-20">
+      <div className="max-w-[1288px] mx-auto px-4 sm:px-6 lg:px-[76px]">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <h3 className="text-sm md:text-base font-semibold text-gray-400 uppercase tracking-wider mb-2">
+        <div className="text-center mb-12 space-y-6">
+          <h3
+            className="text-xl md:text-2xl font-light uppercase"
+            style={{
+              color: "#686868",
+              letterSpacing: "0.4em",
+              lineHeight: "33px",
+            }}
+          >
             SERVICES WE PROVIDE
           </h3>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2
+            className="text-4xl md:text-[64px] font-semibold"
+            style={{ color: "#2E2E2E", lineHeight: "87px" }}
+          >
             Guidance That Moves You Forward
           </h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+          <p
+            className="text-xl md:text-2xl max-w-[888px] mx-auto leading-[33px]"
+            style={{ color: "#686868" }}
+          >
             End-to-end support designed to simplify property buying and
             investing through clear guidance, expert assistance, and confident
             ownership decisions.
@@ -119,30 +70,131 @@ export default function ServicesSection() {
           {services.map((service) => (
             <div
               key={service.id}
-              className={`rounded-xl p-6 lg:p-8 ${
+              className={`rounded-3xl p-6 flex flex-col gap-6 ${
                 service.isHighlighted
-                  ? "bg-[#421F00] text-white"
-                  : "bg-white border border-gray-200 text-gray-900"
+                  ? "bg-[#421F00] shadow-lg"
+                  : "bg-white border"
               }`}
+              style={
+                service.isHighlighted
+                  ? { boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }
+                  : { borderColor: "#D9D9D9" }
+              }
             >
-              <div
-                className={`mb-4 ${
-                  service.isHighlighted ? "text-white" : "text-gray-900"
-                }`}
-              >
-                {service.icon}
+              {/* Icon */}
+              <div className="w-[60px] h-[60px] flex items-center justify-center">
+                {service.icon === "home" && (
+                  <svg
+                    width="60"
+                    height="60"
+                    viewBox="0 0 60 60"
+                    fill="none"
+                  >
+                    <path
+                      d="M10 25L30 10L50 25V50C50 51.3261 49.4732 52.5979 48.5355 53.5355C47.5979 54.4732 46.3261 55 45 55H15C13.6739 55 12.4021 54.4732 11.4645 53.5355C10.5268 52.5979 10 51.3261 10 50V25Z"
+                      fill="#FCDE94"
+                    />
+                    <path
+                      d="M25 55V35H35V55"
+                      stroke="#421F00"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                )}
+                {service.icon === "chart" && (
+                  <svg
+                    width="57"
+                    height="60"
+                    viewBox="0 0 57 60"
+                    fill="#421F00"
+                  >
+                    <rect x="5" y="35" width="12" height="20" rx="2" />
+                    <rect x="22.5" y="20" width="12" height="35" rx="2" />
+                    <rect x="40" y="5" width="12" height="50" rx="2" />
+                  </svg>
+                )}
+                {service.icon === "location" && (
+                  <svg
+                    width="57"
+                    height="60"
+                    viewBox="0 0 57 60"
+                    fill="none"
+                  >
+                    <circle
+                      cx="28.5"
+                      cy="20"
+                      r="15"
+                      stroke="#421F00"
+                      strokeWidth="5"
+                    />
+                    <circle cx="28.5" cy="20" r="5" fill="#421F00" />
+                    <path
+                      d="M28.5 35C28.5 35 43.5 45 28.5 55C13.5 45 28.5 35 28.5 35Z"
+                      stroke="#421F00"
+                      strokeWidth="5"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                )}
+                {service.icon === "document" && (
+                  <svg
+                    width="48"
+                    height="60"
+                    viewBox="0 0 48 60"
+                    fill="#421F00"
+                  >
+                    <path d="M8 0C5.79086 0 4 1.79086 4 4V56C4 58.2091 5.79086 60 8 60H40C42.2091 60 44 58.2091 44 56V16L28 0H8Z" />
+                    <path d="M28 0V16H44L28 0Z" fill="#FAFAFA" />
+                    <rect
+                      x="12"
+                      y="28"
+                      width="24"
+                      height="3"
+                      rx="1.5"
+                      fill="#FAFAFA"
+                    />
+                    <rect
+                      x="12"
+                      y="36"
+                      width="24"
+                      height="3"
+                      rx="1.5"
+                      fill="#FAFAFA"
+                    />
+                    <rect
+                      x="12"
+                      y="44"
+                      width="16"
+                      height="3"
+                      rx="1.5"
+                      fill="#FAFAFA"
+                    />
+                  </svg>
+                )}
               </div>
+
+              {/* Title */}
               <h3
-                className={`text-xl font-bold mb-3 ${
-                  service.isHighlighted ? "text-white" : "text-gray-900"
+                className={`text-2xl md:text-[32px] font-semibold leading-[44px] ${
+                  service.isHighlighted ? "text-[#FCDE94]" : ""
                 }`}
+                style={service.isHighlighted ? {} : { color: "#2E2E2E" }}
               >
                 {service.title}
               </h3>
+
+              {/* Description */}
               <p
-                className={`leading-relaxed ${
-                  service.isHighlighted ? "text-white/90" : "text-gray-700"
+                className={`text-xl md:text-2xl leading-[33px] ${
+                  service.isHighlighted ? "opacity-75" : ""
                 }`}
+                style={
+                  service.isHighlighted
+                    ? { color: "rgba(252, 222, 148, 0.75)" }
+                    : { color: "#686868" }
+                }
               >
                 {service.description}
               </p>

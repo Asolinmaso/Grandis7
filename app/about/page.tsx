@@ -6,7 +6,7 @@ import ServicesSection from "@/components/ServicesSection";
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-[#FAFAFA]">
       <AboutHero />
       <PurposeSection />
       <MissionQuote />

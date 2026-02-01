@@ -222,8 +222,8 @@ export default function FeaturedProperties() {
               key={property.id}
               className="relative group rounded-2xl overflow-hidden bg-gray-900"
             >
-              {/* Property Image */}
-              <div className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px]">
+              {/* Property Image - Reduced Height */}
+              <div className="relative w-full h-[250px] sm:h-[280px] md:h-[320px] lg:h-[360px]">
                 <Image
                   src={property.image}
                   alt={property.title}

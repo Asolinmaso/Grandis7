@@ -16,7 +16,7 @@ export default function EnquiryForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    // Handle form submission here
+    alert("Thank you for your enquiry! We'll get back to you shortly.");
   };
 
   const handleChange = (
@@ -31,151 +31,139 @@ export default function EnquiryForm() {
   };
 
   return (
-    <div className="relative">
-      {/* Background Image */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900">
-          {/* Placeholder - Add skyscraper image at /images/skyscraper.png */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <p className="text-gray-500 text-xs">Add skyscraper image</p>
-          </div>
-          {/* Uncomment when image is available:
-          <Image
-            src="/images/skyscraper.png"
-            alt="Skyscraper"
-            fill
-            className="object-cover blur-sm"
-          />
-          */}
-        </div>
-      </div>
+    <div className="relative w-full min-h-[822px] flex items-center justify-center">
+      {/* Background Image Container - 482x822 */}
+      <div
+        className="absolute inset-0 -z-10 rounded-2xl overflow-hidden"
+        style={{
+          backgroundImage:
+            "linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/images/Contact_Us.png)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundColor: "#DFDDDB",
+        }}
+      />
 
       {/* Form Card */}
-      <div className="relative bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">
+      <div
+        className="relative bg-white rounded-2xl p-6 mx-auto max-w-[503px] w-full"
+        style={{
+          border: "1px solid #D9D9D9",
+          boxShadow: "-10px 10px 50px rgba(0, 0, 0, 0.25)",
+        }}
+      >
+        <h2
+          className="text-2xl font-semibold leading-[33px] text-center mb-6"
+          style={{ color: "#421F00" }}
+        >
           Enquiry Form
         </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-6">
           {/* Name */}
-          <div>
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-gray-700 mb-2"
-            >
-              Name
-            </label>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-2.5 rounded-lg border text-base outline-none focus:ring-2 focus:ring-[#421F00]"
+            style={{
+              borderColor: "#686868",
+              color: "#2E2E2E",
+            }}
+            placeholder="Name"
+          />
+
+          {/* Contact - +91 | separator | input */}
+          <div
+            className="flex items-center gap-2.5 rounded-lg border px-4 py-2.5"
+            style={{ borderColor: "#686868" }}
+          >
+            <span className="text-base" style={{ color: "#686868" }}>
+              +91
+            </span>
+            <span className="w-px h-5 bg-[#686868]" />
             <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
+              type="tel"
+              name="contact"
+              value={formData.contact}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-gray-900"
-              placeholder="Enter your name"
+              className="flex-1 min-w-0 text-base outline-none bg-transparent"
+              style={{ color: "#2E2E2E" }}
+              placeholder="Contact"
             />
-          </div>
-
-          {/* Phone with Country Code */}
-          <div>
-            <label
-              htmlFor="contact"
-              className="block text-sm font-medium text-gray-700 mb-2"
-            >
-              Contact
-            </label>
-            <div className="flex gap-2">
-              <select
-                name="countryCode"
-                value={formData.countryCode}
-                onChange={handleChange}
-                className="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-gray-900 bg-white"
-              >
-                <option value="+91">+91</option>
-                <option value="+1">+1</option>
-                <option value="+44">+44</option>
-              </select>
-              <input
-                type="tel"
-                id="contact"
-                name="contact"
-                value={formData.contact}
-                onChange={handleChange}
-                required
-                className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-gray-900"
-                placeholder="Enter your contact number"
-              />
-            </div>
           </div>
 
           {/* Email */}
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700 mb-2"
-            >
-              E-mail
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-gray-900"
-              placeholder="Enter your email"
-            />
-          </div>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-2.5 rounded-lg border text-base outline-none focus:ring-2 focus:ring-[#421F00]"
+            style={{
+              borderColor: "#686868",
+              color: "#2E2E2E",
+            }}
+            placeholder="E-mail"
+          />
 
-          {/* Property Type */}
-          <div>
-            <label
-              htmlFor="propertyType"
-              className="block text-sm font-medium text-gray-700 mb-2"
-            >
-              Property Type
-            </label>
+          {/* Property Type Dropdown */}
+          <div className="relative">
             <select
-              id="propertyType"
               name="propertyType"
               value={formData.propertyType}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-gray-900 bg-white"
+              className="w-full px-4 py-2.5 rounded-lg border text-base outline-none focus:ring-2 focus:ring-[#421F00] appearance-none bg-white"
+              style={{
+                borderColor: "#686868",
+                color: formData.propertyType ? "#2E2E2E" : "#686868",
+              }}
             >
-              <option value="">Select Property Type</option>
+              <option value="">Property Type</option>
               <option value="residential">Residential</option>
               <option value="commercial">Commercial</option>
               <option value="plots">Plots</option>
             </select>
+            <svg
+              className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"
+              width="10"
+              height="6"
+              viewBox="0 0 10 6"
+              fill="none"
+            >
+              <path d="M1 1L5 5L9 1" stroke="#2E2E2E" strokeWidth="1.5" />
+            </svg>
           </div>
 
           {/* Message */}
-          <div>
-            <label
-              htmlFor="message"
-              className="block text-sm font-medium text-gray-700 mb-2"
-            >
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              rows={4}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-gray-900 resize-none"
-              placeholder="Enter your message"
-            />
-          </div>
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+            rows={4}
+            className="w-full px-4 py-2.5 rounded-lg border resize-none text-base outline-none focus:ring-2 focus:ring-[#421F00]"
+            style={{
+              borderColor: "#686868",
+              color: "#2E2E2E",
+            }}
+            placeholder="Message"
+          />
 
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full py-3 bg-[#421F00] text-white rounded-lg font-semibold hover:bg-[#4a2500] transition-colors"
+            className="w-[94px] py-3 px-[18px] rounded-lg font-medium text-base leading-6 transition-opacity hover:opacity-90"
+            style={{
+              background:
+                "linear-gradient(270deg, #A2630E 0%, #FFBA3E 28.11%, #A2630E 54.62%)",
+              color: "#421F00",
+            }}
           >
             Submit
           </button>

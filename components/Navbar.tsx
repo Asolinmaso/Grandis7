@@ -78,12 +78,6 @@ export default function Navbar() {
           >
             Contact Us
           </Link>
-          <Link
-            href="/properties"
-            className="px-4 xl:px-6 py-2 bg-[#FFBA3E] text-[#421F00] rounded-lg font-semibold hover:bg-[#FFD700] transition-colors text-sm xl:text-base whitespace-nowrap"
-          >
-            Enquire Now
-          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -182,13 +176,6 @@ export default function Navbar() {
               }`}
             >
               Contact Us
-            </Link>
-            <Link
-              href="/properties"
-              onClick={() => setIsMenuOpen(false)}
-              className="px-4 py-2 bg-[#FFBA3E] text-[#421F00] rounded-lg font-semibold hover:bg-[#FFD700] transition-colors text-center mt-2"
-            >
-              Enquire Now
             </Link>
           </div>
         </div>

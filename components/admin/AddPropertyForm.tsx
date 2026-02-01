@@ -50,6 +50,7 @@ export default function AddPropertyForm() {
 
     setUploading(true);
     const files = Array.from(e.target.files);
+    const uploadedUrls: string[] = [];
 
     try {
       for (const file of files) {
@@ -64,9 +65,12 @@ export default function AddPropertyForm() {
 
         if (response.ok) {
           const data = await response.json();
-          setImages([...images, data.secure_url]);
+          uploadedUrls.push(data.secure_url);
         }
       }
+      
+      // Add all uploaded images at once
+      setImages([...images, ...uploadedUrls]);
     } catch (error) {
       console.error("Error uploading images:", error);
       alert("Error uploading images. Please try again.");

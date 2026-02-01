@@ -48,61 +48,72 @@ export default function FAQ() {
   };
 
   return (
-    <section className="w-full bg-gray-50 py-16 lg:py-24">
-      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-[#FAFAFA] py-16 lg:py-20">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-12 text-center">
-          <h3 className="text-sm md:text-base font-semibold text-gray-400 uppercase tracking-wider mb-2">
+          <h3
+            className="text-xl md:text-2xl font-light uppercase mb-4"
+            style={{
+              color: "#686868",
+              letterSpacing: "0.4em",
+              lineHeight: "33px",
+            }}
+          >
             FREQUENTLY ASKED QUESTIONS
           </h3>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+          <h2
+            className="text-4xl md:text-[64px] font-semibold"
+            style={{ color: "#2E2E2E", lineHeight: "87px" }}
+          >
             All the A's to your Q's
           </h2>
         </div>
 
         {/* FAQ Accordion */}
-        <div className="max-w-3xl mx-auto space-y-4">
+        <div className="max-w-[867px] mx-auto space-y-8">
           {faqs.map((faq) => {
             const isOpen = openFaq === faq.id;
             return (
               <div
                 key={faq.id}
-                className={`rounded-lg overflow-hidden transition-all ${
-                  isOpen
-                    ? "bg-[#FCDE94]"
-                    : "bg-white"
-                }`}
+                className="rounded-[10px] overflow-hidden transition-all"
+                style={{
+                  backgroundColor: isOpen ? "#FCDE94" : "#FFFFFF",
+                  border: isOpen ? "2px solid #261702" : "1px solid #2E2E2E",
+                }}
               >
                 <button
                   onClick={() => toggleFaq(faq.id)}
-                  className="w-full px-6 py-4 flex items-center justify-between text-left"
+                  className="w-full px-6 py-6 flex items-center justify-between text-left"
                 >
                   <span
-                    className={`font-medium text-lg ${
-                      isOpen ? "text-black" : "text-gray-900"
-                    }`}
+                    className="text-xl md:text-2xl leading-[33px]"
+                    style={{
+                      color: isOpen ? "#261702" : "#2E2E2E",
+                    }}
                   >
                     {faq.question}
                   </span>
                   <svg
-                    className={`w-5 h-5 flex-shrink-0 transition-transform ${
-                      isOpen ? "rotate-180 text-black" : "text-gray-600"
-                    }`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+                    className="w-3 h-5 flex-shrink-0 transition-transform"
+                    style={{
+                      transform: isOpen ? "rotate(90deg)" : "rotate(-90deg)",
+                    }}
+                    fill={isOpen ? "#261702" : "#2E2E2E"}
+                    viewBox="0 0 12 22"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
+                    <path d="M1 1L11 11L1 21" stroke="currentColor" strokeWidth="2" />
                   </svg>
                 </button>
                 {isOpen && (
-                  <div className="px-6 pb-4">
-                    <p className="text-black">{faq.answer}</p>
+                  <div className="px-6 pb-6">
+                    <p
+                      className="text-lg md:text-xl leading-[27px]"
+                      style={{ color: "#261702" }}
+                    >
+                      {faq.answer}
+                    </p>
                   </div>
                 )}
               </div>
