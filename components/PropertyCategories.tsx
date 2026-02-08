@@ -35,21 +35,21 @@ export default function PropertyCategories() {
   const [activeCategory, setActiveCategory] = useState(1);
 
   return (
-    <section className="w-full py-16 lg:py-24">
+    <section className="w-full py-16 lg:py-24 max-md:py-10 max-md:bg-[#FAFAFA]">
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Title */}
-        <div className="mb-4">
-          <h3 className="text-sm md:text-base font-semibold text-gray-400 uppercase tracking-wider mb-2">
+        {/* Section Title - mobile: centered, 16px label, 40px title */}
+        <div className="mb-4 max-md:text-center max-md:mb-6">
+          <h3 className="text-sm md:text-base font-semibold text-gray-400 uppercase tracking-wider mb-2 max-md:text-[16px] max-md:leading-[22px] max-md:tracking-[0.24em] max-md:text-[#686868] max-md:font-light">
             PROPERTY CATEGORIES
           </h3>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#2E2E2E]">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#2E2E2E] max-md:text-[40px] max-md:leading-[54px]">
             Spaces That Match Every Purpose
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mt-8 md:mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mt-8 md:mt-12 max-md:mt-6">
           {/* Left Side - Large Image */}
-          <div className="relative rounded-2xl overflow-hidden bg-gray-900">
+          <div className="relative rounded-2xl overflow-hidden bg-gray-900 max-md:bg-[#DFDDDB]">
             <div className="relative w-full h-[400px] md:h-[500px] lg:h-full min-h-[400px]">
               {/* Image - Replace /images/residential_street.png with your actual image path */}
               <div className="w-full h-full bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900 relative">
@@ -107,24 +107,23 @@ export default function PropertyCategories() {
             </div>
           </div>
 
-          {/* Right Side - Category Buttons */}
-          <div className="flex flex-col gap-4">
+          {/* Right Side - Category Buttons - mobile: pill 80px height, rounded-full, first gradient */}
+          <div className="flex flex-col gap-4 max-md:gap-3 max-md:mt-6">
             {categories.map((category) => {
               const isActive = activeCategory === category.id;
               return (
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`flex items-center gap-4 p-1 rounded-full transition-all ${
+                  className={`flex items-center gap-4 p-1 rounded-full transition-all max-md:h-20 max-md:rounded-[60px] max-md:px-3 ${
                     isActive
                       ? "bg-gradient-to-r from-[#A2630E] via-[#FFBA3E] to-[#A2630E]"
                       : "bg-[#421F00] hover:bg-[#4a2500]"
                   }`}
                 >
-                  {/* Image Circle */}
                   <div
-                    className={`w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden ${
-                      isActive ? "bg-white/20" : "bg-[#2a1500]"
+                    className={`w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden max-md:w-[62px] max-md:h-[62px] max-md:rounded-full ${
+                      isActive ? "bg-white/20 max-md:bg-white" : "bg-[#2a1500] max-md:bg-white"
                     }`}
                   >
                     <Image
@@ -132,15 +131,10 @@ export default function PropertyCategories() {
                       alt={category.name}
                       width={56}
                       height={56}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover max-md:object-contain max-md:p-1"
                     />
                   </div>
-                  {/* Category Name */}
-                  <span
-                    className={`text-lg font-medium ${
-                      isActive ? "text-white" : "text-white"
-                    }`}
-                  >
+                  <span className="text-lg font-medium text-white max-md:text-[32px] max-md:leading-[44px] max-md:font-extralight">
                     {category.name}
                   </span>
                 </button>

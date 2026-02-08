@@ -23,32 +23,30 @@ const properties = [
 
 export default function FeaturedProperties() {
   return (
-    <section className="w-full py-16 lg:py-24">
+    <section className="w-full py-16 lg:py-24 max-md:py-10 max-md:bg-[#FAFAFA]">
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Title */}
-        <div className="mb-8">
-          <h3 className="text-sm md:text-base text-[#686868] uppercase tracking-wider">
+        {/* Section Title - mobile: centered */}
+        <div className="mb-8 max-md:text-center max-md:mb-4">
+          <h3 className="text-sm md:text-base text-[#686868] uppercase tracking-wider max-md:text-[16px] max-md:leading-[22px] max-md:tracking-[0.24em] max-md:font-light">
             FEATURED PROPERTIES
           </h3>
         </div>
 
-        {/* Header Section with Title and Navigation */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          {/* Left Side - Main Heading */}
-          <div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#2E2E2E] leading-tight">
+        {/* Header Section - mobile: centered title + description */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 max-md:mb-6">
+          <div className="max-md:text-center">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#2E2E2E] leading-tight max-md:text-[40px] max-md:leading-[54px]">
               Handpicked Spaces Worth Exploring
             </h2>
           </div>
 
-          {/* Right Side - Description and Navigation */}
-          <div className="flex flex-col justify-between">
-            <p className="text-[#686868] text-base md:text-lg mb-6 lg:mb-0 text-end">
+          <div className="flex flex-col justify-between max-md:items-center max-md:text-center">
+            <p className="text-[#686868] text-base md:text-lg mb-6 lg:mb-0 text-end max-md:text-center max-md:text-[20px] max-md:leading-[27px] max-md:max-w-[336px] max-md:mx-auto">
               Explore properties that stand out for design, connectivity, and
               investment potential.
             </p>
-            {/* Navigation Arrows */}
-            <div className="flex gap-4 justify-end">
+            {/* Navigation Arrows - hidden on mobile (use dots instead) */}
+            <div className="flex gap-4 justify-end max-md:hidden">
               <button
                 className="w-[73px] h-[73px] flex items-center justify-center hover:opacity-90 transition-opacity"
                 aria-label="Previous"
@@ -215,8 +213,8 @@ export default function FeaturedProperties() {
           </div>
         </div>
 
-        {/* Property Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {/* Property Cards - mobile: single card feel, gradient overlay, 24px title 20px location */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-md:max-w-[398px] max-md:mx-auto">
           {properties.map((property) => (
             <div
               key={property.id}
@@ -232,16 +230,17 @@ export default function FeaturedProperties() {
                 />
                 {/* Overlay Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                <div className="absolute inset-0 hidden max-md:block" style={{ background: "linear-gradient(180deg, rgba(66, 31, 0, 0) 52.05%, #421F00 99.98%)" }} />
               </div>
 
-              {/* Content Overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-6">
+              {/* Content Overlay - mobile: 24px title, 20px location */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 max-md:p-5">
                 <div className="flex items-end justify-between">
                   <div>
-                    <h3 className="text-white text-xl md:text-2xl font-bold mb-1">
+                    <h3 className="text-white text-xl md:text-2xl font-bold mb-1 max-md:text-[24px] max-md:leading-[33px]">
                       {property.title}
                     </h3>
-                    <p className="text-gray-300 text-sm md:text-base">
+                    <p className="text-gray-300 text-sm md:text-base max-md:text-[20px] max-md:leading-[27px] max-md:text-white">
                       {property.location}
                     </p>
                   </div>
@@ -290,6 +289,11 @@ export default function FeaturedProperties() {
               </div>
             </div>
           ))}
+        </div>
+        {/* Mobile pagination dots */}
+        <div className="flex justify-center gap-2 mt-6 md:hidden">
+          <span className="w-2.5 h-2.5 rounded-full bg-[#FFBA3E]" aria-hidden />
+          <span className="w-2.5 h-2.5 rounded-full bg-[#FFBA3E]/50" aria-hidden />
         </div>
       </div>
     </section>

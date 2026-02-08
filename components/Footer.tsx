@@ -3,8 +3,8 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="w-full">
-      {/* Top Section - City Skyline */}
-      <div className="relative w-full h-[30vh] sm:h-[35vh] md:h-[40vh] lg:h-[45vh] overflow-hidden">
+      {/* Top Section - City Skyline - shorter on mobile */}
+      <div className="relative w-full h-[20vh] sm:h-[30vh] md:h-[40vh] lg:h-[45vh] overflow-hidden">
         <Image
           src="/images/footer_img.png"
           alt="City Skyline"
@@ -31,14 +31,14 @@ export default function Footer() {
                 />
               </div>
 
-              {/* Company Description */}
-              <p className="text-[#D4AF37] text-sm leading-relaxed">
+              {/* Company Description - mobile: 20px white */}
+              <p className="text-[#D4AF37] text-sm leading-relaxed max-md:text-white max-md:text-[20px] max-md:leading-[27px]">
                 Grandis7 helps buyers and investors discover verified residential, commercial, and plot opportunities with clarity and trust.
               </p>
 
-              {/* Follow Us */}
+              {/* Follow Us - mobile: 24px white heading */}
               <div className="space-y-3">
-                <h3 className="text-[#D4AF37] text-base font-semibold">
+                <h3 className="text-[#D4AF37] text-base font-semibold max-md:text-white max-md:text-[24px] max-md:leading-[33px]">
                   Follow Us -
                 </h3>
                 <div className="flex gap-4">
@@ -90,134 +90,53 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Middle Column - Quick Links */}
+            {/* Middle Column - Quick Links - mobile: 24px gold heading, 20px white links */}
             <div className="space-y-4">
-              <h3 className="text-[#D4AF37] text-xl font-bold mb-4">
+              <h3 className="text-[#D4AF37] text-xl font-bold mb-4 max-md:text-[#FCDE94] max-md:text-[24px] max-md:leading-[33px]">
                 Quick Links
               </h3>
-              <nav className="flex flex-col space-y-3">
+              <nav className="flex flex-col space-y-3 max-md:space-y-4">
                 <a
-                  href="#"
-                  className="text-[#D4AF37] text-sm hover:text-white transition-colors"
+                  href="/"
+                  className="text-[#D4AF37] text-sm hover:text-white transition-colors max-md:text-white max-md:text-[20px] max-md:leading-[27px]"
                 >
                   Home
                 </a>
-                <a
-                  href="#"
-                  className="text-[#D4AF37] text-sm hover:text-white transition-colors"
-                >
-                  About
-                </a>
-                <a
-                  href="#"
-                  className="text-[#D4AF37] text-sm hover:text-white transition-colors"
-                >
-                  Properties
-                </a>
-                <a
-                  href="#"
-                  className="text-[#D4AF37] text-sm hover:text-white transition-colors"
-                >
-                  Services
-                </a>
-                <a
-                  href="#"
-                  className="text-[#D4AF37] text-sm hover:text-white transition-colors"
-                >
-                  Career
-                </a>
-                <a
-                  href="#"
-                  className="text-[#D4AF37] text-sm hover:text-white transition-colors"
-                >
-                  Contact
-                </a>
+                <a href="/about" className="text-[#D4AF37] text-sm hover:text-white transition-colors max-md:text-white max-md:text-[20px] max-md:leading-[27px]">About</a>
+                <a href="/properties" className="text-[#D4AF37] text-sm hover:text-white transition-colors max-md:text-white max-md:text-[20px] max-md:leading-[27px]">Properties</a>
+                <a href="#services" className="text-[#D4AF37] text-sm hover:text-white transition-colors max-md:text-white max-md:text-[20px] max-md:leading-[27px]">Services</a>
+                <a href="/career" className="text-[#D4AF37] text-sm hover:text-white transition-colors max-md:text-white max-md:text-[20px] max-md:leading-[27px]">Career</a>
+                <a href="/contact" className="text-[#D4AF37] text-sm hover:text-white transition-colors max-md:text-white max-md:text-[20px] max-md:leading-[27px]">Contact</a>
               </nav>
             </div>
 
-            {/* Right Column - Contact Information */}
+            {/* Right Column - Contact - mobile: 24px #FCDE94 heading, 20px white */}
             <div className="space-y-4">
-              <h3 className="text-[#D4AF37] text-xl font-bold mb-4">
+              <h3 className="text-[#D4AF37] text-xl font-bold mb-4 max-md:text-[#FCDE94] max-md:text-[24px] max-md:leading-[33px]">
                 Contact
               </h3>
-              <div className="space-y-4">
-                {/* Phone */}
+              <div className="space-y-4 max-md:space-y-4">
                 <div className="flex items-start gap-3">
-                  <svg
-                    className="w-5 h-5 text-[#D4AF37] mt-0.5 flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                    />
-                  </svg>
-                  <span className="text-[#D4AF37] text-sm">
-                    +91 - 0000000000
-                  </span>
+                  <svg className="w-5 h-5 text-[#D4AF37] mt-0.5 flex-shrink-0 max-md:shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                  <span className="text-[#D4AF37] text-sm max-md:text-white max-md:text-[20px] max-md:leading-[27px]">+91 - 0000000000</span>
                 </div>
-
-                {/* Email */}
                 <div className="flex items-start gap-3">
-                  <svg
-                    className="w-5 h-5 text-[#D4AF37] mt-0.5 flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
-                  <span className="text-[#D4AF37] text-sm">
-                    info@grandis7.com
-                  </span>
+                  <svg className="w-5 h-5 text-[#D4AF37] mt-0.5 flex-shrink-0 max-md:shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                  <span className="text-[#D4AF37] text-sm max-md:text-white max-md:text-[20px] max-md:leading-[27px]">info@grandis7.com</span>
                 </div>
-
-                {/* Address */}
                 <div className="flex items-start gap-3">
-                  <svg
-                    className="w-5 h-5 text-[#D4AF37] mt-0.5 flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                  <span className="text-[#D4AF37] text-sm">
-                    Corporate Office: No.18, Velan Avenue, Rice Mill Road,
-                    Kandigai, Chennai - 600127
-                  </span>
+                  <svg className="w-5 h-5 text-[#D4AF37] mt-0.5 flex-shrink-0 max-md:shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                  <span className="text-[#D4AF37] text-sm max-md:text-white max-md:text-[20px] max-md:leading-[30px]">Corporate Office: No.18, Velan Avenue, Rice Mill Road, Kandigai, Chennai – 600127</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar - Copyright */}
         <div className="border-t border-white/20">
           <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-[100px] py-4">
-            <p className="text-[#D4AF37] text-sm text-center">
-              © 2026 Grandis7. All rights reserved. | Designed & Developed By
-              Manvian
+            <p className="text-[#D4AF37] text-sm text-center max-md:text-[16px] max-md:leading-[28px] max-md:text-white/75">
+              © 2026 Grandis7. All rights reserved. | Designed & Developed By Manvian
             </p>
           </div>
         </div>

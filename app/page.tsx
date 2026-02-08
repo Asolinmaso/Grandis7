@@ -7,7 +7,7 @@ import PropertyCategories from "@/components/PropertyCategories";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white max-md:bg-[#FAFAFA]">
       <HomeHero />
       <AboutGrandis7 />
       <PropertyCategories />
