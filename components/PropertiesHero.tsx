@@ -13,23 +13,15 @@ export default function PropertiesHero({ onSearch }: PropertiesHeroProps) {
 
   return (
     <section className="relative w-full h-[450px] sm:h-[500px] md:h-[550px] lg:h-[600px]">
-      {/* Background Image - Replace with actual hero image */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900">
-        {/* Placeholder - Add your hero image at /images/properties_hero.png */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <p className="text-gray-500 text-sm">
-            Add hero image at /images/properties_hero.png
-          </p>
-        </div>
-        {/* Uncomment when image is available:
+       
         <Image
-          src="/images/properties_hero.png"
+          src="/images/Banner.png"
           alt="Properties Hero"
           fill
           className="object-cover"
           priority
         />
-        */}
       </div>
 
       {/* Overlay */}
