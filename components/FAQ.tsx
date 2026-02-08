@@ -49,8 +49,7 @@ export default function FAQ() {
 
   return (
     <section className="w-full bg-[#FAFAFA] py-16 lg:py-20">
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+      <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-[100px]">
         <div className="mb-12 text-center">
           <h3
             className="text-xl md:text-2xl font-light uppercase mb-4"
@@ -63,14 +62,13 @@ export default function FAQ() {
             FREQUENTLY ASKED QUESTIONS
           </h3>
           <h2
-            className="text-4xl md:text-[64px] font-semibold"
-            style={{ color: "#2E2E2E", lineHeight: "87px" }}
+            className="text-4xl md:text-[64px] font-semibold leading-tight md:leading-[87px]"
+            style={{ color: "#2E2E2E" }}
           >
             All the A's to your Q's
           </h2>
         </div>
 
-        {/* FAQ Accordion */}
         <div className="max-w-[867px] mx-auto space-y-8">
           {faqs.map((faq) => {
             const isOpen = openFaq === faq.id;

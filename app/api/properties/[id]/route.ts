@@ -26,3 +26,59 @@ export async function GET(
     );
   }
 }
+
+export async function PUT(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  try {
+    await connectDB();
+    const body = await request.json();
+    const property = await Property.findByIdAndUpdate(
+      params.id,
+      { $set: body },
+      { new: true, runValidators: true }
+    );
+    if (!property) {
+      return NextResponse.json(
+        { error: "Property not found" },
+        { status: 404 }
+      );
+    }
+    return NextResponse.json({
+      message: "Property updated successfully",
+      property,
+    });
+  } catch (error: any) {
+    console.error("Error updating property:", error);
+    return NextResponse.json(
+      { error: error.message || "Failed to update property" },
+      { status: 500 }
+    );
+  }
+}
+
+export async function DELETE(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  try {
+    await connectDB();
+    const property = await Property.findByIdAndDelete(params.id);
+    if (!property) {
+      return NextResponse.json(
+        { error: "Property not found" },
+        { status: 404 }
+      );
+    }
+    return NextResponse.json({
+      message: "Property deleted successfully",
+    });
+  } catch (error: any) {
+    console.error("Error deleting property:", error);
+    return NextResponse.json(
+      { error: error.message || "Failed to delete property" },
+      { status: 500 }
+    );
+  }
+}

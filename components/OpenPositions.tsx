@@ -9,15 +9,15 @@ const jobListings = [
     location: "Pune",
     experience: "1-3 Years",
     description:
-      "Drive property sales by connecting with potential buyers, showcasing properties, and closing deals. Build relationships and help clients find their perfect property match.",
+      "Engage with clients, present properties, and support buyers throughout the sales process.",
   },
   {
     id: 2,
     title: "Channel Partner Manager",
     location: "Pune",
-    experience: "2-4 Years",
+    experience: "1-3 Years",
     description:
-      "Manage and grow our network of channel partners. Develop strategic partnerships, provide training and support, and ensure partner success in property sales.",
+      "Develop & manage channel partner relationships to generate leads & expand reach.",
   },
   {
     id: 3,
@@ -25,31 +25,31 @@ const jobListings = [
     location: "Pune",
     experience: "1-3 Years",
     description:
-      "Create compelling marketing content and campaigns to promote our properties. Manage digital marketing channels, social media, and content creation.",
+      "Create digital content, manage campaigns, and support brand visibility across platforms.",
   },
   {
     id: 4,
     title: "Property Sales Executive",
-    location: "Chennai",
+    location: "Pune",
     experience: "1-3 Years",
     description:
-      "Drive property sales by connecting with potential buyers, showcasing properties, and closing deals. Build relationships and help clients find their perfect property match.",
+      "Engage with clients, present properties, and support buyers throughout the sales process.",
   },
   {
     id: 5,
-    title: "Business Development Manager",
+    title: "Channel Partner Manager",
     location: "Pune",
-    experience: "3-5 Years",
+    experience: "1-3 Years",
     description:
-      "Identify new business opportunities, develop strategic partnerships, and expand our market presence. Lead initiatives to grow the company's portfolio and client base.",
+      "Develop & manage channel partner relationships to generate leads & expand reach.",
   },
   {
     id: 6,
-    title: "Customer Relationship Manager",
+    title: "Marketing & Content Executive",
     location: "Pune",
-    experience: "2-4 Years",
+    experience: "1-3 Years",
     description:
-      "Maintain strong relationships with clients throughout their property journey. Provide exceptional customer service, address concerns, and ensure client satisfaction.",
+      "Create digital content, manage campaigns, and support brand visibility across platforms.",
   },
 ];
 
@@ -63,95 +63,100 @@ export default function OpenPositions() {
   const currentJobs = jobListings.slice(startIndex, endIndex);
 
   return (
-    <section className="w-full bg-gray-50 py-16 lg:py-24">
-      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12">
+    <section className="w-full bg-[#FAFAFA] py-12 lg:py-16">
+      <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-[100px]">
+        <h2
+          className="text-4xl md:text-[64px] font-semibold leading-tight md:leading-[87px] text-[#2E2E2E] mb-8"
+        >
           Open Positions
         </h2>
 
-        {/* Job Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10 mb-12">
           {currentJobs.map((job) => (
             <div
               key={job.id}
-              className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow"
+              className="bg-white rounded-2xl p-4 flex flex-col gap-4 border border-[#D9D9D9]"
             >
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
+              <h3
+                className="text-2xl md:text-[32px] font-semibold leading-[44px] text-[#2E2E2E]"
+              >
                 {job.title}
               </h3>
-              <p className="text-sm text-gray-600 mb-4">
+              <p className="text-xl md:text-2xl leading-[33px] text-[#686868]">
                 {job.location} | {job.experience}
               </p>
-              <p className="text-gray-700 mb-6 leading-relaxed">
+              <p className="text-xl md:text-2xl leading-[33px] text-[#686868] flex-1">
                 {job.description}
               </p>
-              <button className="w-full py-3 bg-[#421F00] text-white rounded-lg font-semibold hover:bg-[#4a2500] transition-colors">
+              <button
+                type="button"
+                className="inline-flex items-center justify-center py-3 px-6 rounded-lg font-normal text-[20px] leading-[27px] text-[#421F00] w-fit hover:opacity-90 transition-opacity"
+                style={{
+                  background:
+                    "linear-gradient(270deg, #A2630E 0%, #FFBA3E 28.11%, #A2630E 54.62%)",
+                }}
+              >
                 Apply Now
               </button>
             </div>
           ))}
         </div>
 
-        {/* Pagination */}
-        <div className="flex items-center justify-center gap-2">
-          {/* Previous Button */}
+        <div className="flex items-center justify-center gap-6 sm:gap-10">
           <button
             onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
             disabled={currentPage === 1}
-            className="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-300 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100 transition-colors"
+            className="w-10 h-10 flex items-center justify-center rounded-lg border border-[#D9D9D9] bg-white text-[#8F8F8F] disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors"
             aria-label="Previous page"
           >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg className="w-3 h-6" fill="none" viewBox="0 0 12 24">
               <path
+                d="M10 4L4 12l6 8"
+                stroke="currentColor"
+                strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
               />
             </svg>
           </button>
 
-          {/* Page Numbers */}
           {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
             <button
               key={page}
               onClick={() => setCurrentPage(page)}
-              className={`w-10 h-10 flex items-center justify-center rounded-lg font-semibold transition-colors ${
+              className={`w-10 h-10 flex items-center justify-center rounded-lg text-base font-medium leading-6 transition-opacity ${
                 currentPage === page
-                  ? "bg-[#421F00] text-white"
-                  : "border border-gray-300 text-gray-700 hover:bg-gray-100"
+                  ? "text-[#421F00] shadow-[0px_4px_4px_rgba(0,0,0,0.25)]"
+                  : "bg-white border border-[#D9D9D9] text-[#8F8F8F] hover:bg-gray-50"
               }`}
+              style={
+                currentPage === page
+                  ? {
+                      background:
+                        "linear-gradient(270deg, #A2630E 0%, #FFBA3E 28.11%, #A2630E 54.62%)",
+                    }
+                  : undefined
+              }
             >
               {page}
             </button>
           ))}
 
-          {/* Next Button */}
           <button
             onClick={() =>
               setCurrentPage((prev) => Math.min(totalPages, prev + 1))
             }
             disabled={currentPage === totalPages}
-            className="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-300 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100 transition-colors"
+            className="w-10 h-10 flex items-center justify-center rounded-lg border border-[#D9D9D9] bg-white text-[#8F8F8F] disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors rotate-180"
             aria-label="Next page"
           >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg className="w-3 h-6" fill="none" viewBox="0 0 12 24">
               <path
+                d="M10 4L4 12l6 8"
+                stroke="currentColor"
+                strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
               />
             </svg>
           </button>

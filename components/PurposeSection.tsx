@@ -27,7 +27,7 @@ const coreValues = [
 export default function PurposeSection() {
   return (
     <section className="w-full bg-[#FAFAFA] py-16 lg:py-20">
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-[100px]">
+      <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-[100px]">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_620px] gap-12 lg:gap-20">
           {/* Left Column */}
           <div className="space-y-6">
@@ -42,8 +42,8 @@ export default function PurposeSection() {
               OUR PURPOSE
             </h3>
             <h2
-              className="text-4xl md:text-[64px] font-semibold"
-              style={{ color: "#2E2E2E", lineHeight: "87px" }}
+              className="text-4xl md:text-[64px] font-semibold leading-tight md:leading-[87px]"
+              style={{ color: "#2E2E2E" }}
             >
               Purpose Behind Grandis7
             </h2>
@@ -64,12 +64,8 @@ export default function PurposeSection() {
             {coreValues.map((value, index) => (
               <div
                 key={value.id}
-                className="bg-white rounded-3xl p-4 border"
-                style={{
-                  borderColor: "#D9D9D9",
-                  filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
-                  height: index === 0 ? "283px" : "250px",
-                }}
+                className="bg-white rounded-3xl p-6 border shadow-[0px_4px_4px_rgba(0,0,0,0.25)]"
+                style={{ borderColor: "#D9D9D9" }}
               >
                 <div className="flex flex-col gap-6">
                   {/* Icon Circle */}

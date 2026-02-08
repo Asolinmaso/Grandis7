@@ -16,8 +16,8 @@ export default function Footer() {
 
       {/* Bottom Section - Content Area */}
       <div className="bg-[#421F00] w-full">
-        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-[100px] py-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 items-start">
             {/* Left Column - Company Info & Social Media */}
             <div className="space-y-6">
               {/* Logo */}
@@ -213,8 +213,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar - Copyright */}
-        <div className="border-t border-[#D4AF37]/20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="border-t border-white/20">
+          <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-[100px] py-4">
             <p className="text-[#D4AF37] text-sm text-center">
               © 2026 Grandis7. All rights reserved. | Designed & Developed By
               Manvian

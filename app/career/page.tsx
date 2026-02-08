@@ -5,7 +5,7 @@ import OpenPositions from "@/components/OpenPositions";
 
 export default function CareerPage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-[#FAFAFA]">
       <CareerHero />
       <OpenPositions />
       <ApplyForm />

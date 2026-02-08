@@ -18,7 +18,6 @@ export default function ApplyForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData, selectedFile);
-    // Handle form submission here
   };
 
   const handleChange = (
@@ -33,179 +32,126 @@ export default function ApplyForm() {
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setSelectedFile(e.target.files[0]);
-    }
+    if (e.target.files?.[0]) setSelectedFile(e.target.files[0]);
   };
 
-  const handleFileUploadClick = () => {
-    fileInputRef.current?.click();
-  };
+  const inputClass =
+    "w-full px-3 py-3 rounded-lg border border-[#686868] text-[#2E2E2E] text-base leading-[22px] placeholder:text-[#686868] outline-none focus:ring-2 focus:ring-[#421F00]";
 
   return (
-    <section className="w-full bg-gray-50 py-16 lg:py-24">
-      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Left Side - Image */}
-          <div className="relative h-[400px] lg:h-[500px] rounded-xl overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900">
-              {/* Placeholder - Add person working image at /images/career_apply.png */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <p className="text-gray-500 text-sm">
-                  Add person working image at /images/career_apply.png
-                </p>
-              </div>
-              {/* Uncomment when image is available:
-              <Image
-                src="/images/career_apply.png"
-                alt="Apply to Grandis7"
-                fill
-                className="object-cover"
-              />
-              */}
-            </div>
+    <section className="w-full bg-[#FAFAFA] py-12 lg:py-16">
+      <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-[100px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+          {/* Left - Image: align top with form */}
+          <div className="relative w-full max-w-[419px] h-[320px] lg:h-[431px] rounded-2xl overflow-hidden bg-[#DFDDDB]">
+            <Image
+              src="/images/carreer_apply.png"
+              alt="Apply to Grandis7"
+              fill
+              className="object-cover object-center"
+            />
           </div>
 
-          {/* Right Side - Form */}
-          <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          {/* Right - Form: aligned to top */}
+          <div className="min-w-0">
+            <h2
+              className="text-4xl md:text-[64px] font-medium leading-tight md:leading-[87px] text-[#2E2E2E] mb-3"
+            >
               Apply to Grandis7
             </h2>
-            <p className="text-lg text-gray-600 mb-8">
+            <p
+              className="text-xl md:text-2xl leading-[33px] text-[#686868] mb-6"
+            >
               Interested in working with us? Share your details and our team
               will connect with you.
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Name and Email Row */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Name
-                  </label>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Row 1: Name | Phone Number */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className={inputClass}
+                  placeholder="Name"
+                />
+                <div className="flex items-center rounded-lg border border-[#686868] overflow-hidden">
+                  <span className="px-3 py-3 text-base leading-[22px] text-[#686868] border-r border-[#686868]">
+                    +91
+                  </span>
                   <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-gray-900"
-                    placeholder="Enter your name"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-gray-900"
-                    placeholder="Enter your email"
+                    className="flex-1 min-w-0 px-3 py-3 text-base leading-[22px] text-[#2E2E2E] placeholder:text-[#686868] outline-none"
+                    placeholder="Phone Number"
                   />
                 </div>
               </div>
 
-              {/* Message */}
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
+              {/* Row 2: Email | Job Position */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
                   onChange={handleChange}
                   required
-                  rows={4}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-gray-900 resize-none"
-                  placeholder="Enter your message"
+                  className={inputClass}
+                  placeholder="Email"
+                />
+                <input
+                  type="text"
+                  name="jobPosition"
+                  value={formData.jobPosition}
+                  onChange={handleChange}
+                  required
+                  className={inputClass}
+                  placeholder="Job Position"
                 />
               </div>
 
-              {/* Phone and Job Position Row */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label
-                    htmlFor="phone"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    +91 Phone Number
-                  </label>
-                  <div className="flex gap-2">
-                    <select
-                      name="countryCode"
-                      value={formData.countryCode}
-                      onChange={handleChange}
-                      className="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-gray-900 bg-white"
-                    >
-                      <option value="+91">+91</option>
-                      <option value="+1">+1</option>
-                      <option value="+44">+44</option>
-                    </select>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-gray-900"
-                      placeholder="Enter phone number"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label
-                    htmlFor="jobPosition"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Job Position
-                  </label>
-                  <input
-                    type="text"
-                    id="jobPosition"
-                    name="jobPosition"
-                    value={formData.jobPosition}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-gray-900"
-                    placeholder="Enter job position"
-                  />
-                </div>
-              </div>
+              {/* Message - full width */}
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                rows={3}
+                className={`${inputClass} resize-none`}
+                placeholder="Message"
+              />
 
-              {/* File Upload */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Upload File
-                </label>
-                <div className="flex items-center gap-4">
-                  <button
-                    type="button"
-                    onClick={handleFileUploadClick}
-                    className="px-6 py-3 border-2 border-gray-300 rounded-lg text-gray-700 font-medium hover:bg-gray-50 transition-colors"
+              {/* File upload */}
+              <div className="rounded-lg border border-[#686868] p-2 flex flex-wrap items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => fileInputRef.current?.click()}
+                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded border border-[#686868] bg-white text-base leading-[22px] text-[#686868] hover:bg-gray-50"
+                >
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
                   >
-                    Upload File
-                  </button>
-                  <span className="text-gray-600">
-                    {selectedFile ? selectedFile.name : "No File Chosen"}
-                  </span>
-                </div>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"
+                    />
+                  </svg>
+                  Upload File
+                </button>
+                <span className="text-xs leading-4 text-[#686868]">
+                  {selectedFile ? selectedFile.name : "No File Chosen"}
+                </span>
                 <input
                   ref={fileInputRef}
                   type="file"
@@ -213,17 +159,20 @@ export default function ApplyForm() {
                   onChange={handleFileChange}
                   className="hidden"
                 />
-                <p className="text-sm text-gray-500 mt-2">
-                  Drag & drop your file here (PDF, DOCX, JPG, PNG) Max size:
-                  5MB
-                </p>
               </div>
+              <p className="text-xs leading-4 text-[#686868]">
+                Drag & drop your file here (PDF, DOCX, JPG, PNG) Max size: 5MB
+              </p>
 
-              {/* Submit Button */}
-              <div className="flex justify-end">
+              <div className="flex justify-end pt-2">
                 <button
                   type="submit"
-                  className="px-8 py-3 bg-[#421F00] text-white rounded-lg font-semibold hover:bg-[#4a2500] transition-colors"
+                  className="inline-flex items-center justify-center py-3 px-6 rounded-lg font-normal text-[20px] leading-[27px] text-[#421F00] hover:opacity-90 transition-opacity"
+                  style={{
+                    background:
+                      "linear-gradient(270deg, #A2630E 0%, #FFBA3E 28.11%, #A2630E 54.62%)",
+                    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                  }}
                 >
                   Submit
                 </button>

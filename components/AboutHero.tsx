@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function AboutHero() {
   return (
-    <section className="relative w-full h-[780px]">
+    <section className="relative w-full min-h-[520px] md:min-h-[780px] flex items-center">
       {/* Background Image with Gradient Overlay */}
       <div
         className="absolute inset-0"
@@ -15,11 +15,11 @@ export default function AboutHero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 w-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-center py-20 md:py-0">
         <div className="max-w-[1005px] mx-auto space-y-8">
           <h1
-            className="text-4xl md:text-[64px] font-semibold"
-            style={{ color: "#FFFFFF", lineHeight: "87px" }}
+            className="text-4xl md:text-[64px] font-semibold leading-tight md:leading-[87px]"
+            style={{ color: "#FFFFFF" }}
           >
             About Us
           </h1>

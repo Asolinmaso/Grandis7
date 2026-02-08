@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import NavbarWrapper from "@/components/NavbarWrapper";
 
 const notoSans = Noto_Sans({
   subsets: ["latin"],
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={notoSans.variable}>
       <body className="font-sans antialiased">
-        <Navbar />
+        <NavbarWrapper />
         {children}
       </body>
     </html>

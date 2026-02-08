@@ -1,7 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import AdminPageHeader from "./AdminPageHeader";
+
+const inputClass =
+  "w-full px-3 py-3 rounded-lg border border-[#D9D9D9] text-[#2E2E2E] placeholder:text-[#686868] outline-none focus:ring-2 focus:ring-[#421F00] focus:border-[#421F00]";
 
 export default function AddPropertyForm() {
   const [formData, setFormData] = useState({
@@ -126,278 +129,107 @@ export default function AddPropertyForm() {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen p-4 md:p-8">
-      <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Admin Dashboard</h1>
-      <h2 className="text-xl md:text-2xl font-semibold text-gray-800 mb-6 md:mb-8">Add Property</h2>
+    <div>
+      <AdminPageHeader title="Add Property" backHref="/admin/property" />
 
-      <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-md p-4 md:p-8">
+      <form onSubmit={handleSubmit} className="bg-white rounded-2xl border border-[#D9D9D9] p-6 md:p-8 max-w-4xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
-          {/* Name */}
           <div>
-            <label className="block text-xs md:text-sm font-medium text-gray-700 mb-2">
-              Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              placeholder="Enter Property Name"
-              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-sm md:text-base"
-            />
+            <label className="block text-sm font-medium text-[#2E2E2E] mb-1.5">Name</label>
+            <input type="text" name="name" value={formData.name} onChange={handleChange} required placeholder="Enter Property Name" className={inputClass} />
           </div>
-
-          {/* Type */}
           <div>
-            <label className="block text-xs md:text-sm font-medium text-gray-700 mb-2">
-              Type
-            </label>
-            <input
-              type="text"
-              name="type"
-              value={formData.type}
-              onChange={handleChange}
-              required
-              placeholder="Enter Property Type"
-              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-sm md:text-base"
-            />
+            <label className="block text-sm font-medium text-[#2E2E2E] mb-1.5">Type</label>
+            <input type="text" name="type" value={formData.type} onChange={handleChange} required placeholder="Enter Property Type" className={inputClass} />
           </div>
-
-          {/* Area */}
           <div>
-            <label className="block text-xs md:text-sm font-medium text-gray-700 mb-2">
-              Area
-            </label>
-            <input
-              type="text"
-              name="area"
-              value={formData.area}
-              onChange={handleChange}
-              required
-              placeholder="Enter Property Area in Sqft"
-              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-sm md:text-base"
-            />
+            <label className="block text-sm font-medium text-[#2E2E2E] mb-1.5">Area</label>
+            <input type="text" name="area" value={formData.area} onChange={handleChange} required placeholder="Enter Property Area in Sqft" className={inputClass} />
           </div>
-
-          {/* Configuration */}
           <div>
-            <label className="block text-xs md:text-sm font-medium text-gray-700 mb-2">
-              Configuration
-            </label>
-            <input
-              type="text"
-              name="configuration"
-              value={formData.configuration}
-              onChange={handleChange}
-              required
-              placeholder="Enter Configuration"
-              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-sm md:text-base"
-            />
+            <label className="block text-sm font-medium text-[#2E2E2E] mb-1.5">Configuration</label>
+            <input type="text" name="configuration" value={formData.configuration} onChange={handleChange} required placeholder="Enter Configuration" className={inputClass} />
           </div>
-
-          {/* Address */}
           <div>
-            <label className="block text-xs md:text-sm font-medium text-gray-700 mb-2">
-              Address
-            </label>
-            <input
-              type="text"
-              name="address"
-              value={formData.address}
-              onChange={handleChange}
-              required
-              placeholder="Enter Address"
-              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-sm md:text-base"
-            />
+            <label className="block text-sm font-medium text-[#2E2E2E] mb-1.5">Address</label>
+            <input type="text" name="address" value={formData.address} onChange={handleChange} required placeholder="Enter Address" className={inputClass} />
           </div>
-
-          {/* City */}
           <div>
-            <label className="block text-xs md:text-sm font-medium text-gray-700 mb-2">
-              City
-            </label>
-            <input
-              type="text"
-              name="city"
-              value={formData.city}
-              onChange={handleChange}
-              required
-              placeholder="Enter City"
-              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-sm md:text-base"
-            />
+            <label className="block text-sm font-medium text-[#2E2E2E] mb-1.5">City</label>
+            <input type="text" name="city" value={formData.city} onChange={handleChange} required placeholder="Enter City" className={inputClass} />
           </div>
-
-          {/* State */}
           <div>
-            <label className="block text-xs md:text-sm font-medium text-gray-700 mb-2">
-              State
-            </label>
-            <input
-              type="text"
-              name="state"
-              value={formData.state}
-              onChange={handleChange}
-              required
-              placeholder="Enter State"
-              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-sm md:text-base"
-            />
+            <label className="block text-sm font-medium text-[#2E2E2E] mb-1.5">State</label>
+            <input type="text" name="state" value={formData.state} onChange={handleChange} required placeholder="Enter State" className={inputClass} />
           </div>
-
-          {/* Pincode */}
           <div>
-            <label className="block text-xs md:text-sm font-medium text-gray-700 mb-2">
-              Pincode
-            </label>
-            <input
-              type="text"
-              name="pincode"
-              value={formData.pincode}
-              onChange={handleChange}
-              required
-              placeholder="Enter Pincode"
-              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-sm md:text-base"
-            />
+            <label className="block text-sm font-medium text-[#2E2E2E] mb-1.5">Pincode</label>
+            <input type="text" name="pincode" value={formData.pincode} onChange={handleChange} required placeholder="Enter Pincode" className={inputClass} />
           </div>
-
-          {/* Status */}
           <div>
-            <label className="block text-xs md:text-sm font-medium text-gray-700 mb-2">
-              Status
-            </label>
-            <select
-              name="status"
-              value={formData.status}
-              onChange={handleChange}
-              required
-              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] bg-white text-sm md:text-base"
-            >
+            <label className="block text-sm font-medium text-[#2E2E2E] mb-1.5">Status</label>
+            <select name="status" value={formData.status} onChange={handleChange} required className={inputClass}>
               <option value="">Select Status</option>
               <option value="available">Available</option>
               <option value="sold">Sold</option>
               <option value="reserved">Reserved</option>
             </select>
           </div>
-
-          {/* Price */}
           <div>
-            <label className="block text-xs md:text-sm font-medium text-gray-700 mb-2">
-              Price
-            </label>
-            <input
-              type="text"
-              name="price"
-              value={formData.price}
-              onChange={handleChange}
-              placeholder="On Request"
-              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-sm md:text-base"
-            />
+            <label className="block text-sm font-medium text-[#2E2E2E] mb-1.5">Price</label>
+            <input type="text" name="price" value={formData.price} onChange={handleChange} placeholder="On Request" className={inputClass} />
           </div>
         </div>
 
-        {/* Description */}
         <div className="mb-6">
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Description
-          </label>
-          <textarea
-            name="description"
-            value={formData.description}
-            onChange={handleChange}
-            required
-            rows={4}
-            placeholder="Enter Description"
-            className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] resize-none text-sm md:text-base"
-          />
+          <label className="block text-sm font-medium text-[#2E2E2E] mb-1.5">Description</label>
+          <textarea name="description" value={formData.description} onChange={handleChange} required rows={4} placeholder="Enter Description" className={`${inputClass} resize-none`} />
         </div>
 
-        {/* Amenities */}
         <div className="mb-6">
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Amenities
-          </label>
-          <div className="flex gap-2 mb-3">
+          <label className="block text-sm font-medium text-[#2E2E2E] mb-1.5">Amenities</label>
+          <div className="flex flex-wrap gap-2 items-center mb-2">
             <input
               type="text"
               value={amenityInput}
               onChange={(e) => setAmenityInput(e.target.value)}
-              onKeyPress={(e) => {
-                if (e.key === "Enter") {
-                  e.preventDefault();
-                  handleAddAmenity();
-                }
-              }}
+              onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); handleAddAmenity(); } }}
               placeholder="Add Amenities"
-              className="flex-1 px-3 md:px-4 py-2 md:py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-sm md:text-base"
+              className="flex-1 min-w-[160px] max-w-xs px-3 py-2.5 rounded-lg border border-[#D9D9D9] placeholder:text-[#686868] outline-none focus:ring-2 focus:ring-[#421F00]"
             />
-            <button
-              type="button"
-              onClick={handleAddAmenity}
-              className="px-4 md:px-6 py-2 md:py-3 bg-[#421F00] text-white rounded-lg font-semibold hover:bg-[#4a2500] transition-colors text-sm md:text-base"
-            >
-              +
-            </button>
+            <button type="button" onClick={handleAddAmenity} className="w-10 h-10 shrink-0 rounded-lg border border-[#D9D9D9] bg-white flex items-center justify-center text-[#2E2E2E] hover:bg-gray-50 text-lg font-medium" aria-label="Add amenity">+</button>
           </div>
           <div className="flex flex-wrap gap-2">
             {amenities.map((amenity, index) => (
-              <span
-                key={index}
-                className="px-3 md:px-4 py-1.5 md:py-2 bg-gray-100 rounded-full text-gray-700 flex items-center gap-2 text-xs md:text-sm"
-              >
+              <span key={index} className="px-3 py-1.5 bg-gray-100 rounded-full text-[#2E2E2E] text-sm flex items-center gap-1.5">
                 {amenity}
-                <button
-                  type="button"
-                  onClick={() => handleRemoveAmenity(index)}
-                  className="text-red-500 hover:text-red-700"
-                >
-                  ×
-                </button>
+                <button type="button" onClick={() => handleRemoveAmenity(index)} className="text-[#686868] hover:text-red-600" aria-label="Remove">×</button>
               </span>
             ))}
           </div>
         </div>
 
-        {/* Upload Images */}
-        <div className="mb-6">
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Upload Property Images
+        <div className="mb-8">
+          <label className="block text-sm font-medium text-[#2E2E2E] mb-1.5">Upload Property Images</label>
+          <label className="inline-flex items-center gap-2 px-4 py-2.5 rounded border border-[#D9D9D9] bg-white cursor-pointer hover:bg-gray-50">
+            <input type="file" multiple accept="image/*" onChange={handleImageUpload} className="hidden" disabled={uploading} />
+            <svg className="w-5 h-5 text-[#686868]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg>
+            <span className="text-sm text-[#686868]">{uploading ? "Uploading..." : "Upload File"}</span>
           </label>
-          <div className="mb-3">
-            <label className="inline-block px-4 md:px-6 py-2 md:py-3 bg-[#421F00] text-white rounded-lg font-semibold hover:bg-[#4a2500] transition-colors cursor-pointer text-sm md:text-base">
-              <input
-                type="file"
-                multiple
-                accept="image/*"
-                onChange={handleImageUpload}
-                className="hidden"
-                disabled={uploading}
-              />
-              {uploading ? "Uploading..." : "Upload File"}
-            </label>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {images.map((image, index) => (
-              <span
-                key={index}
-                className="px-3 md:px-4 py-1.5 md:py-2 bg-gray-100 rounded-full text-gray-700 flex items-center gap-2 text-xs md:text-sm"
-              >
+          <div className="flex flex-wrap gap-2 mt-2">
+            {images.map((_, index) => (
+              <span key={index} className="px-3 py-1.5 bg-gray-100 rounded-full text-[#2E2E2E] text-sm flex items-center gap-1.5">
                 Image{index + 1}.jpg
-                <button
-                  type="button"
-                  onClick={() => handleRemoveImage(index)}
-                  className="text-red-500 hover:text-red-700"
-                >
-                  ×
-                </button>
+                <button type="button" onClick={() => handleRemoveImage(index)} className="text-[#686868] hover:text-red-600">×</button>
               </span>
             ))}
           </div>
         </div>
 
-        {/* Submit Button */}
         <button
           type="submit"
-          className="w-full md:w-auto px-6 md:px-8 py-2 md:py-3 bg-[#421F00] text-white rounded-lg font-semibold hover:bg-[#4a2500] transition-colors text-sm md:text-base"
+          className="w-full py-3 px-6 rounded-lg font-medium text-[#421F00] transition-opacity hover:opacity-90"
+          style={{ background: "linear-gradient(270deg, #A2630E 0%, #FFBA3E 28.11%, #A2630E 54.62%)" }}
         >
           Create Property
         </button>
