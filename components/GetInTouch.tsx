@@ -41,7 +41,7 @@ export default function GetInTouch() {
             className="text-xl md:text-2xl leading-[33px]"
             style={{ color: "#2E2E2E" }}
           >
-            +91 - 0000000000
+            +91 - 9600663389
           </p>
         </div>
 
