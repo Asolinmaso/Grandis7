@@ -8,7 +8,7 @@ const partners = [
   },
   {
     name: "Adityaram",
-    logo: "/images/arglogo.png",
+    logo: "/images/arglogo2.png",
     bg: "bg-black",
   },
 ];
