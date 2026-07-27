@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function AboutHero() {
   return (
-    <section className="relative w-full min-h-[520px] md:min-h-[780px] flex items-center">
+    <section className="relative w-full h-[480px] md:h-[650px] flex items-center">
       {/* Background Image with Gradient Overlay */}
       <div
         className="absolute inset-0"
@@ -15,8 +15,8 @@ export default function AboutHero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 w-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-center py-20 md:py-0">
-        <div className="max-w-[1005px] mx-auto space-y-8">
+      <div className="relative z-10 w-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-center translate-y-28 md:translate-y-32">
+        <div className="max-w-[900px] mx-auto space-y-4">
           <h1
             className="text-4xl md:text-[64px] font-semibold leading-tight md:leading-[87px]"
             style={{ color: "#FFFFFF" }}
@@ -24,7 +24,7 @@ export default function AboutHero() {
             About Us
           </h1>
           <p
-            className="text-xl md:text-2xl max-w-[1005px] mx-auto leading-[33px]"
+            className="text-xl md:text-2xl max-w-[900px] mx-auto leading-[33px]"
             style={{ color: "#FFFFFF" }}
           >
             Grandis7 is a trusted real estate consultancy focused on helping

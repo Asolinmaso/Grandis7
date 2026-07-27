@@ -39,14 +39,14 @@ export default function HomeHero() {
             src="/images/Home_Banner.png"
             alt="Home Banner Background"
             fill
-            className="object-cover object-top"
+            className="object-cover object-[center_60px]"
             priority
           />
         </div>
-        <div className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-12 lg:px-14 xl:px-16">
           <div className="pt-8 md:pt-12 lg:pt-16 pb-64 md:pb-96 lg:pb-[500px] xl:pb-[600px]">
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 lg:gap-12">
-              <div className="flex-1">
+              <div className="lg:w-[60%]">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold text-[#2E2E2E] leading-tight">
                   Find the Right Property.
                 </h1>
@@ -63,8 +63,8 @@ export default function HomeHero() {
                   Explore Properties
                 </Link>
               </div>
-              <div className="lg:max-w-sm xl:max-w-md lg:pt-16 xl:pt-20">
-                <p className="text-gray-600 text-sm md:text-base lg:text-lg leading-relaxed">
+              <div className="lg:flex-1 lg:pt-16 xl:pt-20">
+                <p className="max-w-[600px] text-gray-600 text-sm md:text-base lg:text-lg leading-relaxed">
                   Explore thoughtfully selected properties with expert guidance at every step.
                 </p>
               </div>

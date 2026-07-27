@@ -23,8 +23,8 @@ const properties = [
 
 export default function FeaturedProperties() {
   return (
-    <section className="w-full py-16 lg:py-24 max-md:py-10 max-md:bg-[#FAFAFA]">
-      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full py-20 lg:py-24 max-md:py-10 max-md:bg-[#FAFAFA]">
+      <div className="max-w-7xl mx-auto px-12 lg:px-14 xl:px-16">
         {/* Section Title - mobile: centered */}
         <div className="mb-8 max-md:text-center max-md:mb-4">
           <h3 className="text-sm md:text-base text-[#686868] uppercase tracking-wider max-md:text-[16px] max-md:leading-[22px] max-md:tracking-[0.24em] max-md:font-light">
@@ -33,7 +33,7 @@ export default function FeaturedProperties() {
         </div>
 
         {/* Header Section - mobile: centered title + description */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 max-md:mb-6">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] gap-8 mb-12 max-md:mb-6">
           <div className="max-md:text-center">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#2E2E2E] leading-tight max-md:text-[40px] max-md:leading-[54px]">
               Handpicked Spaces Worth Exploring

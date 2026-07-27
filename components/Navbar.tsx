@@ -12,8 +12,8 @@ export default function Navbar() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-[#421F00] py-3 md:py-4 px-4 sm:px-6 lg:px-8 shadow-md">
-      <div className="max-w-screen-2xl mx-auto flex items-center justify-between">
+    <nav className="sticky top-0 z-50 w-full bg-[#421F00] py-3 md:py-4 shadow-md">
+      <div className="max-w-7xl mx-auto px-12 lg:px-14 xl:px-16 flex items-center justify-between">
         {/* Logo Section */}
         <Link href="/" className="flex items-center z-50">
           <Image
@@ -21,13 +21,13 @@ export default function Navbar() {
             alt="Grandis7 Logo"
             width={100}
             height={50}
-            className="h-auto w-20 md:w-28"
+            className="h-auto w-24 md:w-32"
             priority
           />
         </Link>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+        <div className="hidden lg:flex items-center gap-8 xl:gap-10">
           <Link
             href="/"
             className={`text-sm xl:text-base hover:text-[#FFBA3E] transition-colors ${
