@@ -7,14 +7,15 @@ export default function CareerHero() {
         src="/images/carreer_banner.png"
         alt="Career Banner"
         fill
-        className="object-cover"
         priority
+        quality={100}
+        className="object-cover object-center brightness-105 contrast-110"
       />
       <div
         className="absolute inset-0 z-[1]"
         style={{
           background:
-            "linear-gradient(0deg, rgba(66, 31, 0, 0.5), rgba(66, 31, 0, 0.5))",
+            "linear-gradient(0deg, rgba(66, 31, 0, 0.08), rgba(66, 31, 0, 0.08))",
         }}
       />
 

@@ -28,17 +28,17 @@ export default function PurposeSection() {
   return (
     <section className="w-full bg-[#FAFAFA] py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-12 lg:px-14 xl:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-[500px_540px] justify-between gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[520px_580px] gap-8 items-stretch">
           {/* Left Column */}
           <div className="flex flex-col h-full">
             <h3
-              className="text-xl md:text-2xl font-light uppercase"
-              style={{
-                color: "#686868",
-                letterSpacing: "0.4em",
-                lineHeight: "33px",
-              }}
-            >
+  className="text-base md:text-[18px] font-medium uppercase mb-3"
+  style={{
+    color: "#686868",
+    letterSpacing: "0.28em",
+    lineHeight: "28px",
+  }}
+>
               OUR PURPOSE
             </h3>
             <h2
@@ -51,7 +51,7 @@ export default function PurposeSection() {
             </h2>
 
             {/* Skyscraper Image */}
-            <div className="relative w-full max-w-[397px] h-[455px] rounded-3xl overflow-hidden mt-auto pt-8">
+            <div className="relative w-full max-w-[360px] h-[500px] rounded-3xl overflow-hidden mt-auto">
               <Image
                 src="/images/ourpurpose.png"
                 alt="Purpose"
@@ -62,14 +62,14 @@ export default function PurposeSection() {
           </div>
 
           {/* Right Column - Core Values */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             {coreValues.map((value, index) => (
               <div
                 key={value.id}
-                className="bg-white rounded-3xl p-6 border shadow-[0px_4px_4px_rgba(0,0,0,0.25)]"
+                className="bg-white rounded-3xl p-5 border shadow-[0px_4px_4px_rgba(0,0,0,0.25)]"
                 style={{ borderColor: "#D9D9D9" }}
               >
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-4">
                   {/* Icon Circle */}
                   <div
                     className="w-[60px] h-[60px] rounded-full flex items-center justify-center"
@@ -93,7 +93,7 @@ export default function PurposeSection() {
 
                   {/* Description */}
                   <p
-                    className="text-xl md:text-2xl leading-[33px]"
+                    className="text-lg md:text-[22px] leading-[30px]"
                     style={{ color: "#686868" }}
                   >
                     {value.description}

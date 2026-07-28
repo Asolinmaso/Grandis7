@@ -127,55 +127,49 @@ export default function ApplyForm() {
                 placeholder="Message"
               />
 
-              {/* File upload */}
-              <div className="rounded-lg border border-[#686868] p-2 flex flex-wrap items-center gap-2">
-                <button
-                  type="button"
-                  onClick={() => fileInputRef.current?.click()}
-                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded border border-[#686868] bg-white text-base leading-[22px] text-[#686868] hover:bg-gray-50"
-                >
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"
-                    />
-                  </svg>
-                  Upload File
-                </button>
-                <span className="text-xs leading-4 text-[#686868]">
-                  {selectedFile ? selectedFile.name : "No File Chosen"}
-                </span>
-                <input
-                  ref={fileInputRef}
-                  type="file"
-                  accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
-                  onChange={handleFileChange}
-                  className="hidden"
-                />
-              </div>
-              <p className="text-xs leading-4 text-[#686868]">
-                Drag & drop your file here (PDF, DOCX, JPG, PNG) Max size: 5MB
-              </p>
+              {/* Upload + Submit */}
+              <div className="flex flex-col gap-2">
+                <div className="flex flex-col md:flex-row items-center gap-4">
+                  <div className="flex-1 rounded-lg border border-[#686868] p-2 flex items-center gap-3">
+                    <button
+                      type="button"
+                      onClick={() => fileInputRef.current?.click()}
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded border border-[#686868] bg-white text-[#686868]"
+                    >
+                      Upload File
+                    </button>
 
-              <div className="flex justify-end pt-2">
-                <button
-                  type="submit"
-                  className="inline-flex items-center justify-center py-3 px-6 rounded-lg font-normal text-[20px] leading-[27px] text-[#421F00] hover:opacity-90 transition-opacity"
-                  style={{
-                    background:
-                      "linear-gradient(270deg, #A2630E 0%, #FFBA3E 28.11%, #A2630E 54.62%)",
-                    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-                  }}
-                >
-                  Submit
-                </button>
+                    <span className="text-sm text-[#686868]">
+                      {selectedFile ? selectedFile.name : "No File Chosen"}
+                    </span>
+
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+                      onChange={handleFileChange}
+                      className="hidden"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-[130px] h-[52px] rounded-lg text-[#421F00] text-[18px]"
+                    style={{
+                      background:
+                        "linear-gradient(270deg,#A2630E 0%,#FFBA3E 28.11%,#A2630E 54.62%)",
+                      boxShadow: "0px 4px 4px rgba(0,0,0,0.25)",
+                    }}
+                  >
+                    Submit
+                  </button>
+                </div>
+
+                <p className="text-xs text-[#686868]">
+                  Drag & drop your file here (PDF, DOCX, JPG, PNG)
+                  <br />
+                  Max size: 5MB
+                </p>
               </div>
             </form>
           </div>

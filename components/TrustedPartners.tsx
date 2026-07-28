@@ -15,7 +15,7 @@ const partners = [
 
 export default function TrustedPartners() {
   return (
-    <section className="bg-[#FAFAFA] py-20 lg:py-24">
+    <section className="bg-[#FAFAFA] pt-16 pb-2 lg:pt-20 lg:pb-4">
       <div className="max-w-7xl mx-auto px-12 lg:px-14 xl:px-16">
 
         <div className="text-center max-w-3xl mx-auto">
@@ -35,7 +35,7 @@ export default function TrustedPartners() {
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
 
           {partners.map((partner) => (
             <div

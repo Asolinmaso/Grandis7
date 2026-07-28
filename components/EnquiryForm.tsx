@@ -112,16 +112,18 @@ export default function EnquiryForm() {
           className="w-full px-4 py-2.5 rounded-[8px] border border-[#686868] resize-none text-base leading-[22px] outline-none focus:ring-2 focus:ring-[#421F00] text-[#2E2E2E]"
           placeholder="Message"
         />
-        <button
-          type="submit"
-          className="w-[94px] py-3 px-[18px] rounded-[8px] font-medium text-base leading-6 text-[#421F00] transition-opacity hover:opacity-90"
-          style={{
-            background:
-              "linear-gradient(270deg, #A2630E 0%, #FFBA3E 28.11%, #A2630E 54.62%)",
-          }}
-        >
-          Submit
-        </button>
+        <div className="flex justify-center">
+          <button
+            type="submit"
+            className="w-[94px] py-3 px-[18px] rounded-[8px] font-medium text-base leading-6 text-[#421F00] transition-opacity hover:opacity-90"
+            style={{
+              background:
+                "linear-gradient(270deg, #A2630E 0%, #FFBA3E 28.11%, #A2630E 54.62%)",
+            }}
+          >
+            Submit
+          </button>
+        </div>
       </form>
     </div>
   );

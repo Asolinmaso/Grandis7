@@ -14,7 +14,7 @@ export default function PropertiesHero({ onSearch }: PropertiesHeroProps) {
   return (
     <section className="relative w-full h-[450px] sm:h-[500px] md:h-[550px] lg:h-[600px]">
       <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900">
-       
+
         <Image
           src="/images/Banner.png"
           alt="Properties Hero"
@@ -42,53 +42,67 @@ export default function PropertiesHero({ onSearch }: PropertiesHeroProps) {
           </p>
 
           {/* Search Bar */}
-          <div className="mt-6 md:mt-8 bg-white rounded-lg p-2 sm:p-3 shadow-xl max-w-4xl mx-auto w-full">
-            <div className="flex flex-col sm:flex-row gap-2">
+          <div className="mt-6 md:mt-8 bg-white rounded-2xl p-3 shadow-xl max-w-4xl mx-auto w-full">
+            <div className="flex flex-col sm:flex-row gap-3">
               {/* Property Type Dropdown */}
-              <select
-                value={propertyType}
-                onChange={(e) => setPropertyType(e.target.value)}
-                className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-gray-700"
-              >
-                <option value="">Select Property Type</option>
-                <option value="residential">Residential</option>
-                <option value="commercial">Commercial</option>
-                <option value="plots">Plots</option>
-              </select>
+              <div className="relative flex-1">
+                <select
+                  value={propertyType}
+                  onChange={(e) => setPropertyType(e.target.value)}
+                  className="w-full h-[56px] px-5 pr-12 rounded-xl border border-[#CFCFCF] text-[18px] text-[#421F00] appearance-none bg-white focus:outline-none cursor-pointer"
+                >
+                  <option value="">Select Property Type</option>
+                  <option value="residential">Residential</option>
+                  <option value="commercial">Commercial</option>
+                  <option value="plots">Plots</option>
+                </select>
+
+                <Image
+                  src="/images/dropdown-arrow.png"
+                  alt="Dropdown Arrow"
+                  width={16}
+                  height={16}
+                  className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none"
+                />
+              </div>
 
               {/* Location Dropdown */}
-              <select
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-                className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#421F00] text-gray-700"
-              >
-                <option value="">Select Location</option>
-                <option value="baner-pune">Baner, Pune</option>
-                <option value="chennai">Chennai</option>
-                <option value="bangalore">Bangalore</option>
-              </select>
+              <div className="relative flex-1">
+                <select
+                  value={propertyType}
+                  onChange={(e) => setPropertyType(e.target.value)}
+                  className="w-full h-[56px] px-5 pr-12 rounded-xl border border-[#CFCFCF] text-[18px] text-[#421F00] appearance-none bg-white focus:outline-none cursor-pointer"
+                >
+                  <option value="">Select Property Type</option>
+                  <option value="residential">Residential</option>
+                  <option value="commercial">Commercial</option>
+                  <option value="plots">Plots</option>
+                </select>
+
+                <Image
+                  src="/images/dropdown-arrow.png"
+                  alt="Dropdown Arrow"
+                  width={16}
+                  height={16}
+                  className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none"
+                />
+              </div>
 
               {/* Search Button */}
               <button
                 type="button"
-                className="px-8 py-3 bg-[#421F00] text-white rounded-lg font-semibold hover:bg-[#4a2500] transition-colors flex items-center justify-center gap-2"
+                className="h-[56px] px-10 rounded-lg bg-gradient-to-r from-[#A2630E] via-[#FFBA3E] to-[#A2630E] text-[#421F00] font-medium transition-all duration-300 flex items-center justify-center gap-2 hover:opacity-95"
                 onClick={() => {
                   onSearch(propertyType, location);
                 }}
               >
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
+                <Image
+                  src="/images/search-icon.png"
+                  alt="Search"
+                  width={20}
+                  height={20}
+                  className="object-contain"
+                />
                 Search
               </button>
             </div>
