@@ -3,6 +3,7 @@
 import Footer from "@/components/Footer";
 import PropertiesHero from "@/components/PropertiesHero";
 import PropertyGrid from "@/components/PropertyGrid";
+import ScrollReveal from "@/components/ScrollReveal";
 import { useState } from "react";
 
 export default function PropertiesPage() {
@@ -13,18 +14,26 @@ export default function PropertiesPage() {
   const handleSearch = (type: string, loc: string) => {
     setPropertyType(type);
     setLocation(loc);
-    setSearchQuery(""); // Clear text search when using filters
+    setSearchQuery("");
   };
 
   return (
     <main className="min-h-screen">
-      <PropertiesHero onSearch={handleSearch} />
-      <PropertyGrid
-        searchQuery={searchQuery}
-        propertyType={propertyType}
-        location={location}
-      />
-      <Footer />
+      <ScrollReveal>
+        <PropertiesHero onSearch={handleSearch} />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <PropertyGrid
+          searchQuery={searchQuery}
+          propertyType={propertyType}
+          location={location}
+        />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <Footer />
+      </ScrollReveal>
     </main>
   );
 }

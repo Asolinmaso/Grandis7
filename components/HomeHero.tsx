@@ -44,7 +44,7 @@ export default function HomeHero() {
           />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-12 lg:px-14 xl:px-16">
-          <div className="pt-8 md:pt-12 lg:pt-16 pb-64 md:pb-96 lg:pb-[500px] xl:pb-[600px]">
+          <div className="pt-8 md:pt-12 lg:pt-16 pb-48 md:pb-72 lg:pb-[420px] xl:pb-[500px]">
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 lg:gap-12">
               <div className="lg:w-[60%]">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold text-[#2E2E2E] leading-tight">

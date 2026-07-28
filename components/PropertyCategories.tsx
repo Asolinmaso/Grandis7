@@ -34,11 +34,11 @@ export default function PropertyCategories() {
   
 
   return (
-    <section className="w-full py-20 lg:py-24 max-md:py-10 max-md:bg-[#FAFAFA]">
+    <section className="w-full py-16 lg:py-20 max-md:py-10 max-md:bg-[#FAFAFA]">
       <div className="max-w-7xl mx-auto px-12 lg:px-14 xl:px-16">
         {/* Section Title - mobile: centered, 16px label, 40px title */}
         <div className="mb-4 max-md:text-center max-md:mb-6">
-          <h3 className="text-sm md:text-base font-semibold text-gray-400 uppercase tracking-wider mb-2 max-md:text-[16px] max-md:leading-[22px] max-md:tracking-[0.24em] max-md:text-[#686868] max-md:font-light">
+          <h3 className="text-sm md:text-base font-semibold uppercase tracking-[0.24em] text-[#686868] mb-2 max-md:text-[16px] max-md:leading-[22px] max-md:tracking-[0.24em] max-md:font-light">
             PROPERTY CATEGORIES
           </h3>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#2E2E2E] max-md:text-[40px] max-md:leading-[54px]">
@@ -46,7 +46,7 @@ export default function PropertyCategories() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mt-8 md:mt-12 max-md:mt-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mt-6 md:mt-8 max-md:mt-6">
           {/* Left Side - Large Image */}
           <div className="relative rounded-2xl bg-gray-900 max-md:bg-[#DFDDDB]">
             <div className="relative w-full h-[400px] md:h-[500px] lg:h-full min-h-[400px]">

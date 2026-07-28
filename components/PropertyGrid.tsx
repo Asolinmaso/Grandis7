@@ -160,11 +160,10 @@ export default function PropertyGrid({
             <button
               key={page}
               onClick={() => setCurrentPage(page)}
-              className={`w-10 h-10 flex items-center justify-center rounded-lg font-semibold transition-colors ${
-                currentPage === page
-                  ? "bg-[#421F00] text-white"
-                  : "border border-gray-300 text-gray-700 hover:bg-gray-100"
-              }`}
+              className={`w-10 h-10 flex items-center justify-center rounded-lg font-semibold transition-colors ${currentPage === page
+                  ? "bg-gradient-to-r from-[#A2630E] via-[#FFBA3E] to-[#A2630E] text-[#421F00]"
+                  : "border border-[#D9D9D9] text-[#686868] hover:bg-gray-100"
+                }`}
             >
               {page}
             </button>

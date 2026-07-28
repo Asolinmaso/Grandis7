@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 const faqs = [
   {
@@ -93,16 +94,17 @@ export default function FAQ() {
                   >
                     {faq.question}
                   </span>
-                  <svg
-                    className="w-3 h-5 flex-shrink-0 transition-transform"
-                    style={{
-                      transform: isOpen ? "rotate(90deg)" : "rotate(-90deg)",
-                    }}
-                    fill={isOpen ? "#261702" : "#2E2E2E"}
-                    viewBox="0 0 12 22"
-                  >
-                    <path d="M1 1L11 11L1 21" stroke="currentColor" strokeWidth="2" />
-                  </svg>
+                  <Image
+                    src={
+                      isOpen
+                        ? "/images/faq-arrow-up.png"
+                        : "/images/faq-arrow-down.png"
+                    }
+                    alt="Toggle FAQ"
+                    width={24}
+                    height={24}
+                    className="flex-shrink-0"
+                  />
                 </button>
                 {isOpen && (
                   <div className="px-6 pb-6">
