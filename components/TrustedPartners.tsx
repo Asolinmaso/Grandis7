@@ -15,8 +15,8 @@ const partners = [
 
 export default function TrustedPartners() {
   return (
-    <section className="bg-[#FAFAFA] py-20">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="bg-[#FAFAFA] py-20 lg:py-24">
+      <div className="max-w-7xl mx-auto px-12 lg:px-14 xl:px-16">
 
         <div className="text-center max-w-3xl mx-auto">
           <p className="text-[#B8860B] text-sm font-semibold uppercase tracking-[4px]">

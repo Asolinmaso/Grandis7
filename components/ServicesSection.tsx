@@ -5,7 +5,7 @@ const services = [
     description:
       "We guide buyers through verified property options with clear insights, expert support, and confident decisions.",
     icon: "home",
-    isHighlighted: true,
+    isHighlighted: false,
   },
   {
     id: 2,
@@ -121,8 +121,8 @@ function ServiceIcon({
 
 export default function ServicesSection() {
   return (
-    <section className="w-full bg-[#FAFAFA] py-16 lg:py-20">
-      <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-[76px]">
+    <section id="services" className="w-full bg-[#FAFAFA] py-16 lg:py-20">
+      <div className="max-w-7xl mx-auto px-12 lg:px-14 xl:px-16">
         {/* Section Header */}
         <div className="text-center mb-12 space-y-6">
           <h3
@@ -156,11 +156,7 @@ export default function ServicesSection() {
           {services.map((service) => (
             <div
               key={service.id}
-              className={`rounded-3xl p-6 flex flex-col gap-6 ${
-                service.isHighlighted
-                  ? "bg-[#421F00] shadow-lg"
-                  : "bg-white border"
-              }`}
+              className="group h-full rounded-3xl p-6 flex flex-col gap-6 border border-[#D9D9D9] bg-white transition-all duration-300 hover:bg-[#421F00] hover:shadow-lg"
               style={
                 service.isHighlighted
                   ? { boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }
@@ -169,9 +165,7 @@ export default function ServicesSection() {
             >
               {/* Icon */}
               <div
-                className={`w-[60px] h-[60px] flex items-center justify-center ${
-                  service.isHighlighted ? "text-[#FCDE94]" : "text-[#421F00]"
-                }`}
+                className="w-[60px] h-[60px] flex items-center justify-center text-[#421F00] group-hover:text-[#FCDE94] transition-colors duration-300"
               >
                 <ServiceIcon
                   name={service.icon as "home" | "chart" | "location" | "document"}
@@ -181,24 +175,14 @@ export default function ServicesSection() {
 
               {/* Title */}
               <h3
-                className={`text-2xl md:text-[32px] font-semibold leading-[44px] ${
-                  service.isHighlighted ? "text-[#FCDE94]" : ""
-                }`}
-                style={service.isHighlighted ? {} : { color: "#2E2E2E" }}
+                className="min-h-[88px] text-2xl md:text-[32px] font-semibold leading-[44px] text-[#2E2E2E] group-hover:text-[#FCDE94] transition-colors duration-300 break-words"
               >
                 {service.title}
               </h3>
 
               {/* Description */}
               <p
-                className={`text-xl md:text-2xl leading-[33px] ${
-                  service.isHighlighted ? "opacity-75" : ""
-                }`}
-                style={
-                  service.isHighlighted
-                    ? { color: "rgba(252, 222, 148, 0.75)" }
-                    : { color: "#686868" }
-                }
+                className="flex-1 text-xl md:text-2xl leading-[33px] text-[#686868] group-hover:text-[rgba(252,222,148,0.75)] transition-colors duration-300"
               >
                 {service.description}
               </p>

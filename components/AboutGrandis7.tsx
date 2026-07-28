@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function AboutGrandis7() {
   return (
-    <section className="w-full bg-white py-12 md:py-16 lg:py-20 max-md:bg-[#FAFAFA]">
-      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-white py-20 lg:py-24 max-md:bg-[#FAFAFA]">
+      <div className="max-w-7xl mx-auto px-12 lg:px-14 xl:px-16">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-12">
           {/* Left Content */}
           <div className="flex-1 lg:max-w-2xl xl:max-w-3xl max-md:text-center max-md:flex max-md:flex-col max-md:items-center">
@@ -39,7 +39,7 @@ export default function AboutGrandis7() {
           </div>
 
           {/* Right Content - Images */}
-          <div className="flex gap-3 md:gap-4 lg:gap-2 justify-center lg:justify-end max-md:bg-[#CEEFFF] max-md:rounded-2xl max-md:p-4 max-md:gap-4 max-md:w-full max-md:max-w-[440px] max-md:mx-auto">
+          <div className="flex gap-3 md:gap-4 lg:gap-0 justify-center lg:justify-end max-md:bg-[#CEEFFF] max-md:rounded-2xl max-md:p-4 max-md:gap-4 max-md:w-full max-md:max-w-[440px] max-md:mx-auto">
             {/* Small Image */}
             <div className="relative w-[140px] sm:w-[160px] md:w-[200px] lg:w-[240px] h-[200px] sm:h-[240px] md:h-[300px] lg:h-[380px] rounded-lg overflow-hidden max-md:w-[90px] max-md:h-[280px] max-md:rounded-2xl max-md:shrink-0">
               <Image
